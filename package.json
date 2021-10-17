@@ -1,0 +1,11 @@
+{
+  "name": "lcov-viewer",
+  "version": "1.0.0",
+  "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
+  "license": "ISC",
+  "private": true,
+  "workspaces": [
+    "packages/*",
+    "packages/demo/*"
+  ]
+}
