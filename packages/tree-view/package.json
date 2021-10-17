@@ -1,0 +1,12 @@
+{
+  "name": "@lcov-viewer/tree-view",
+  "version": "1.0.0",
+  "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
+  "main": "index.js",
+  "license": "ISC",
+  "peerDependencies": {
+    "clsx": "^1.1.1",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  }
+}

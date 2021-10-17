@@ -1,0 +1,36 @@
+.root {
+  cursor: pointer;
+
+  &.hidden {
+    display: none;
+  }
+
+  &.folder {
+    .title {
+      &:before {
+        display: inline-block;
+        content: "+";
+        width: 8px;
+        margin-right: 4px;
+        text-align: center;
+      }
+    }
+
+    &.open {
+      .title {
+        &:before {
+          content: "\2013";
+        }
+      }
+    }
+  }
+
+  td {
+    cursor: inherit;
+    padding: 4px;
+  }
+
+  &:hover {
+    background-color: rgba(211, 71, 166, 0.28);
+  }
+}
