@@ -1,0 +1,54 @@
+{
+  "name": "@lcov-viewer/app",
+  "version": "1.0.0",
+  "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
+  "main": "src/index.js",
+  "license": "ISC",
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  },
+  "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@babel/preset-env": "^7.15.8",
+    "@babel/preset-react": "^7.14.5",
+    "@lcov-viewer/tree-view": "^1.0.0",
+    "babel-loader": "^8.2.2",
+    "clean-webpack-plugin": "^4.0.0",
+    "css-loader": "^6.4.0",
+    "css-minimizer-webpack-plugin": "^3.1.1",
+    "html-webpack-plugin": "^5.4.0",
+    "less": "^4.1.2",
+    "less-loader": "^10.1.0",
+    "mini-css-extract-plugin": "^2.4.2",
+    "postcss-loader": "^6.2.0",
+    "style-loader": "^3.3.0",
+    "webpack": "^5.58.2",
+    "webpack-bundle-analyzer": "^4.5.0",
+    "webpack-cli": "^4.9.0",
+    "webpack-dev-server": "^4.3.1"
+  },
+  "scripts": {
+    "build": "webpack --mode=production --node-env=production",
+    "analyze": "webpack --mode=production --analyze",
+    "serve": "webpack serve"
+  },
+  "dependencies": {
+    "clsx": "^1.1.1",
+    "lcov-parse": "^1.0.0",
+    "parse-lcov": "^1.0.4",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2",
+    "react-dropzone": "^11.4.2",
+    "react-router": "^5.2.1",
+    "react-router-dom": "^5.3.0"
+  }
+}

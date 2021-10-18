@@ -7,5 +7,12 @@
   "workspaces": [
     "packages/*",
     "packages/demo/*"
-  ]
+  ],
+  "devDependencies": {
+    "autoprefixer": "^10.3.7",
+    "postcss": "^8.3.9",
+    "postcss-flexbugs-fixes": "^5.0.2",
+    "postcss-normalize": "^10.0.1",
+    "postcss-preset-env": "^6.7.0"
+  }
 }

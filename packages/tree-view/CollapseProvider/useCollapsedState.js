@@ -3,28 +3,28 @@ import CollapseContext from './CollapseContext';
 import findNode from './findNode';
 
 const useCollapsedState = (path) => {
-    const [, forceUpdate] = useState();
-    const context = useContext(CollapseContext);
-    const current = findNode(context.state, path);
+  const [, forceUpdate] = useState();
+  const context = useContext(CollapseContext);
+  const current = findNode(context.state, path);
 
-    useEffect(() => {
-        if (!Object.hasOwnProperty.call(context.subscriptions, path)) {
-            context.subscriptions[path] = [];
-        }
+  useEffect(() => {
+    if (!Object.hasOwnProperty.call(context.subscriptions, path)) {
+      context.subscriptions[path] = [];
+    }
 
-        const notify = () => forceUpdate({});
-        context.subscriptions[path].push(notify);
+    const notify = () => forceUpdate({});
+    context.subscriptions[path].push(notify);
 
-        return () => {
-            const index = context.subscriptions[path].findIndex(x => x === notify);
+    return () => {
+      const index = context.subscriptions[path].findIndex(x => x === notify);
 
-            if (index > -1) {
-                context.subscriptions[path].splice(index, 1);
-            }
-        };
-    }, [context]);
+      if (index > -1) {
+        context.subscriptions[path].splice(index, 1);
+      }
+    };
+  }, [context]);
 
-    return current.collapsed;
+  return current.collapsed;
 };
 
 export default useCollapsedState;
