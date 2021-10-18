@@ -1,0 +1,236 @@
+{
+  "CollapseProvider/CollapseContext.js": {
+    "metrics": {
+      "lines": {
+        "total": 5,
+        "covered": 5
+      },
+      "functions": {
+        "total": 0,
+        "covered": 0
+      },
+      "branches": {
+        "total": 0,
+        "covered": 0
+      }
+    },
+    "path": "CollapseProvider/CollapseContext.js",
+    "filename": "CollapseContext.js"
+  },
+  "CollapseProvider/CollapseProvider.js": {
+    "metrics": {
+      "lines": {
+        "total": 21,
+        "covered": 21
+      },
+      "functions": {
+        "total": 3,
+        "covered": 3
+      },
+      "branches": {
+        "total": 4,
+        "covered": 4
+      }
+    },
+    "path": "CollapseProvider/CollapseProvider.js",
+    "filename": "CollapseProvider.js"
+  },
+  "CollapseProvider/findNode.js": {
+    "metrics": {
+      "lines": {
+        "total": 3,
+        "covered": 3
+      },
+      "functions": {
+        "total": 1,
+        "covered": 1
+      },
+      "branches": {
+        "total": 2,
+        "covered": 2
+      }
+    },
+    "path": "CollapseProvider/findNode.js",
+    "filename": "findNode.js"
+  },
+  "CollapseProvider/useCollapse.js": {
+    "metrics": {
+      "lines": {
+        "total": 18,
+        "covered": 12
+      },
+      "functions": {
+        "total": 1,
+        "covered": 1
+      },
+      "branches": {
+        "total": 1,
+        "covered": 1
+      }
+    },
+    "path": "CollapseProvider/useCollapse.js",
+    "filename": "useCollapse.js"
+  },
+  "CollapseProvider/useCollapsedState.js": {
+    "metrics": {
+      "lines": {
+        "total": 30,
+        "covered": 30
+      },
+      "functions": {
+        "total": 2,
+        "covered": 1
+      },
+      "branches": {
+        "total": 4,
+        "covered": 4
+      }
+    },
+    "path": "CollapseProvider/useCollapsedState.js",
+    "filename": "useCollapsedState.js"
+  },
+  "TreeView/Node.js": {
+    "metrics": {
+      "lines": {
+        "total": 61,
+        "covered": 61
+      },
+      "functions": {
+        "total": 4,
+        "covered": 4
+      },
+      "branches": {
+        "total": 9,
+        "covered": 7
+      }
+    },
+    "path": "TreeView/Node.js",
+    "filename": "Node.js"
+  },
+  "TreeView/Node.module.less": {
+    "metrics": {
+      "lines": {
+        "total": 36,
+        "covered": 36
+      },
+      "functions": {
+        "total": 1,
+        "covered": 1
+      },
+      "branches": {
+        "total": 2,
+        "covered": 2
+      }
+    },
+    "path": "TreeView/Node.module.less",
+    "filename": "Node.module.less"
+  },
+  "TreeView/NodeStats.js": {
+    "metrics": {
+      "lines": {
+        "total": 61,
+        "covered": 61
+      },
+      "functions": {
+        "total": 3,
+        "covered": 3
+      },
+      "branches": {
+        "total": 15,
+        "covered": 13
+      }
+    },
+    "path": "TreeView/NodeStats.js",
+    "filename": "NodeStats.js"
+  },
+  "TreeView/NodeStats.module.less": {
+    "metrics": {
+      "lines": {
+        "total": 15,
+        "covered": 15
+      },
+      "functions": {
+        "total": 1,
+        "covered": 1
+      },
+      "branches": {
+        "total": 2,
+        "covered": 2
+      }
+    },
+    "path": "TreeView/NodeStats.module.less",
+    "filename": "NodeStats.module.less"
+  },
+  "TreeView/SubTree.js": {
+    "metrics": {
+      "lines": {
+        "total": 10,
+        "covered": 10
+      },
+      "functions": {
+        "total": 1,
+        "covered": 1
+      },
+      "branches": {
+        "total": 2,
+        "covered": 2
+      }
+    },
+    "path": "TreeView/SubTree.js",
+    "filename": "SubTree.js"
+  },
+  "TreeView/TreeView.js": {
+    "metrics": {
+      "lines": {
+        "total": 32,
+        "covered": 32
+      },
+      "functions": {
+        "total": 1,
+        "covered": 1
+      },
+      "branches": {
+        "total": 1,
+        "covered": 1
+      }
+    },
+    "path": "TreeView/TreeView.js",
+    "filename": "TreeView.js"
+  },
+  "TreeView/TreeView.module.less": {
+    "metrics": {
+      "lines": {
+        "total": 21,
+        "covered": 21
+      },
+      "functions": {
+        "total": 1,
+        "covered": 1
+      },
+      "branches": {
+        "total": 2,
+        "covered": 2
+      }
+    },
+    "path": "TreeView/TreeView.module.less",
+    "filename": "TreeView.module.less"
+  },
+  "TreeView/coverageTree.js": {
+    "metrics": {
+      "lines": {
+        "total": 26,
+        "covered": 26
+      },
+      "functions": {
+        "total": 1,
+        "covered": 1
+      },
+      "branches": {
+        "total": 5,
+        "covered": 5
+      }
+    },
+    "path": "TreeView/coverageTree.js",
+    "filename": "coverageTree.js"
+  }
+}
