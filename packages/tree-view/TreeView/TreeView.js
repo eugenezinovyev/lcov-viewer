@@ -1,7 +1,7 @@
 import React from 'react';
 import CollapseProvider from '../CollapseProvider/CollapseProvider';
 import { buildCoverageTree } from './coverageTree';
-import SubTree from './SubTree';
+import Node from './Node';
 import classes from './TreeView.module.less';
 
 const TreeView = ({ coverage }) => {
@@ -22,7 +22,7 @@ const TreeView = ({ coverage }) => {
         </tr>
         </thead>
         <tbody>
-        <SubTree tree={tree} coverage={coverage}/>
+          <Node name={tree.name} tree={tree} coverage={coverage} />
         </tbody>
       </table>
     </CollapseProvider>

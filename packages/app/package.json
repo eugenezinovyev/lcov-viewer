@@ -39,7 +39,7 @@
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
     "analyze": "webpack --mode=production --analyze",
-    "serve": "webpack serve"
+    "start": "webpack serve"
   },
   "dependencies": {
     "clsx": "^1.1.1",

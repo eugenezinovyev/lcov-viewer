@@ -5,7 +5,6 @@ import useCollapsedState from '../CollapseProvider/useCollapsedState';
 import { BRANCH_NODE } from './coverageTree';
 import classes from './Node.module.less';
 import NodeStats from './NodeStats';
-import SubTree from './SubTree';
 
 const paddingCache = {};
 const calculatePadding = (depth) => {
@@ -16,23 +15,19 @@ const calculatePadding = (depth) => {
   return paddingCache[depth];
 };
 
-const LeafNode = ({ name, tree, coverage, depth, collapsed: parentCollapsed }) => {
-  return (
-    <React.Fragment>
-      <tr className={clsx(classes.root, parentCollapsed && classes.hidden)}>
-        <td className={classes.title} style={calculatePadding(depth)}>
-          {name}
-        </td>
-        <NodeStats tree={tree} coverage={coverage}/>
-      </tr>
-    </React.Fragment>
-  );
-};
+const LeafNode = ({ name, tree, coverage, depth }) => (
+  <tr className={classes.root}>
+    <td className={classes.title} style={calculatePadding(depth)}>
+      {name}
+    </td>
+    <NodeStats tree={tree} coverage={coverage}/>
+  </tr>
+);
 
-const BranchNode = ({ name, tree, coverage, depth, collapsed: parentCollapsed }) => {
+const BranchNode = ({ name, tree, coverage, depth }) => {
   const toggleCollapsed = useCollapse(tree.path);
   const collapsed = useCollapsedState(tree.path);
-  const nodeClasses = clsx(classes.root, classes.folder, parentCollapsed && classes.hidden, !collapsed && classes.open);
+  const nodeClasses = clsx(classes.root, classes.folder, !collapsed && classes.open);
 
   return (
     <React.Fragment>
@@ -42,15 +37,17 @@ const BranchNode = ({ name, tree, coverage, depth, collapsed: parentCollapsed })
         </td>
         <NodeStats tree={tree} coverage={coverage}/>
       </tr>
-      {<SubTree tree={tree} coverage={coverage} depth={depth + 1} collapsed={parentCollapsed || collapsed}/>}
+      {!collapsed && (
+        Object.keys(tree.children).map((key) => <Node key={key} name={key} tree={tree.children[key]} coverage={coverage} depth={depth + 1}/>)
+      )}
     </React.Fragment>
   );
 };
 
-const Node = ({ name, tree, coverage, depth, collapsed }) => {
+const Node = ({ name, tree, coverage, depth }) => {
   return tree.type === BRANCH_NODE
-    ? <BranchNode name={name} tree={tree} coverage={coverage} depth={depth} collapsed={collapsed}/>
-    : <LeafNode name={name} tree={tree} coverage={coverage} depth={depth} collapsed={collapsed}/>;
+    ? <BranchNode name={name} tree={tree} coverage={coverage} depth={depth}/>
+    : <LeafNode name={name} tree={tree} coverage={coverage} depth={depth}/>;
 };
 
 Node.defaultProps = {
