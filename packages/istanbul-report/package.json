@@ -1,0 +1,24 @@
+{
+  "name": "@lcov-viewer/istanbul-report",
+  "version": "1.0.0",
+  "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
+  "main": "lib/index.js",
+  "license": "ISC",
+  "scripts": {
+    "build": "webpack --mode=production --node-env=production",
+    "analyze": "webpack --mode=production --analyze"
+  },
+  "dependencies": {
+    "@lcov-viewer/tree-view": "^1.0.0",
+    "clsx": "^1.1.1",
+    "istanbul-lib-report": "^3.0.0",
+    "react": "^17.0.2",
+    "react-dom": "^17.0.2"
+  },
+  "devDependencies": {
+    "copy-webpack-plugin": "^9.0.1",
+    "html-inline-css-webpack-plugin": "^1.11.1",
+    "html-inline-script-webpack-plugin": "^2.0.2",
+    "html-webpack-plugin": "^5.4.0"
+  }
+}
