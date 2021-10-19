@@ -22,8 +22,13 @@ const TreeView = ({ coverage }) => {
         </tr>
         </thead>
         <tbody>
-          <Node name={tree.name} tree={tree} coverage={coverage} />
+        <Node name={tree.name} tree={tree} coverage={coverage}/>
         </tbody>
+        <tfoot>
+        <tr>
+          <td colSpan={7}/>
+        </tr>
+        </tfoot>
       </table>
     </CollapseProvider>
   );

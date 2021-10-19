@@ -40,7 +40,8 @@ module.exports = (env, argv) => {
     module: {
       rules: [
         {
-          test: /\.(js|jsx)$/i,
+          test: /\.(js|jsx|cjs|mjs)$/i,
+          exclude: /node_modules[\\/](?!(react-dropzone)).*/,
           use: {
             loader: 'babel-loader',
             options: {
@@ -60,10 +61,6 @@ module.exports = (env, argv) => {
         {
           test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
           type: 'asset',
-        },
-        {
-          test: /\.(json)$/i,
-          type: 'asset/resource',
         },
       ],
     },
