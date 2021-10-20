@@ -1,4 +1,5 @@
 const path = require('path');
+const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
@@ -32,7 +33,14 @@ module.exports = (env, argv) => {
     optimization: {
       minimize: isProduction,
       minimizer: [
-        `...`,
+        new TerserPlugin({
+          terserOptions: {
+            format: {
+              comments: false,
+            },
+          },
+          extractComments: false,
+        }),
         isProduction && new JsonMinimizerPlugin(),
         isProduction && new CssMinimizerPlugin(),
       ].filter(Boolean),
