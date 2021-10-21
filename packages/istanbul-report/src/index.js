@@ -46,7 +46,7 @@ class IstanbulReport extends ReportBase {
   }
 
   onEnd() {
-    const reportFile = path.resolve(this.writer.baseDir, 'index.html');
+    const reportFile = path.resolve(this.writer.baseDir, 'app.js');
 
     const self = this;
     fs.readFile(reportFile, 'utf8', function (err, data) {

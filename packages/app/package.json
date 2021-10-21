@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "main": "src/index.js",
-  "license": "ISC",
+  "license": "MIT",
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
     "analyze": "webpack --mode=production --analyze",
