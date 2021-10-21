@@ -12,8 +12,7 @@
   "dependencies": {
     "@lcov-viewer/tree-view": "^1.0.0",
     "clsx": "^1.1.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2"
+    "preact": "^10.5.15"
   },
   "devDependencies": {
     "json-loader": "^0.5.7"

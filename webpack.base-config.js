@@ -24,6 +24,13 @@ module.exports = (env, argv) => {
       historyApiFallback: true,
       host: 'localhost',
     },
+    resolve: {
+      alias: {
+        'react': 'preact/compat',
+        'react-dom': 'preact/compat',
+        'react/jsx-runtime': 'preact/jsx-runtime',
+      },
+    },
     plugins: [
       new CleanWebpackPlugin(),
       new HtmlWebpackPlugin({ template: 'index.html' }),

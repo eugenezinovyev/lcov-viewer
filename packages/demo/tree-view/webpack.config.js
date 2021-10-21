@@ -13,8 +13,8 @@ module.exports = (env, argv) => {
   config.module.rules.push({
     test: /sample\.json$/i,
     use: { loader: 'json-loader' }, // I gave up trying to minify asset/source
-    type: 'javascript/auto'
+    type: 'javascript/auto',
   });
-  
+
   return config;
 };
