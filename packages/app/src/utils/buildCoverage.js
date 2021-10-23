@@ -1,5 +1,5 @@
 const buildCoverage = (records) => records.reduce((aggregate, record) => {
-  const path = record.file.replace(/\\/g, '/').replace(/^(.):/, '/$1');
+  const path = record.file.replace(/\\/g, '/').replace(/^(.):/, '/$1').replace(/^\//, '');
 
   aggregate[path] = {
     metrics: {

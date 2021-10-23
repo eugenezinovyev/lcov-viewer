@@ -1,9 +1,9 @@
 import clsx from 'clsx';
-import { source as parseLCOV } from 'lcov-parse';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useHistory } from 'react-router-dom';
 import buildCoverage from '../../utils/buildCoverage';
+import readLcov from '../../utils/readLcov';
 import useCoverageDataControl from '../CoverageDataProvider/useCoverageDataControl';
 import classes from './LcovImport.module.less';
 
@@ -11,28 +11,22 @@ const LcovImport = () => {
   const [error, setError] = useState(undefined);
   const [set] = useCoverageDataControl();
   const history = useHistory();
-  const onError = useCallback((error, msg) => {
-    console.error(error);
-    setError(msg);
-  }, []);
   const onDrop = useCallback((files) => {
-    if (files.length > 0) {
-      const reader = new FileReader();
-      reader.onload = () => {
-        const lcovContent = reader.result;
-        parseLCOV(lcovContent, (error, data) => {
-          if (error) {
-            onError(error, 'Failed to parse file');
-          } else {
-            set(buildCoverage(data));
-            history.push('/report');
-          }
-        });
-      };
-      reader.onerror = () => onError(reader.error, 'Failed to read file');
-      reader.readAsText(files[0]);
+    if (files.length <= 0) {
+      return;
     }
-  }, [set, onError, location]);
+
+    readLcov(files[0]).then(
+      (coverage) => {
+        set(buildCoverage(coverage));
+        history.push('/report');
+      },
+      ([error, msg]) => {
+        console.error(error);
+        setError(msg);
+      },
+    );
+  }, [set, history]);
   const { isDragActive, getRootProps, getInputProps } = useDropzone({ onDrop });
 
   return (

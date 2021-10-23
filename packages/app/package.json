@@ -7,7 +7,13 @@
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
     "analyze": "webpack --mode=production --analyze",
-    "start": "webpack serve"
+    "start": "webpack serve",
+    "test": "../../node_modules/.bin/jest --colors"
+  },
+  "devDependencies": {
+    "@lcov-viewer/istanbul-report": "^1.0.0",
+    "@testing-library/jest-dom": "^5.14.1",
+    "@testing-library/preact": "^2.0.1"
   },
   "dependencies": {
     "@lcov-viewer/tree-view": "^1.0.0",

@@ -174,7 +174,8 @@ const configurator = (customization = {}) => {
     transform: {
       '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': path.resolve(__dirname, 'jest', 'babelTransform.js'),
       '^.+\\.(css|less)$': path.resolve(__dirname, 'jest', 'cssTransform.js'),
-      '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json)$)': path.resolve(__dirname, 'jest', 'fileTransform.js'),
+      '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json|info)$)': path.resolve(__dirname, 'jest', 'fileTransform.js'),
+      '^.+\\.info$': 'jest-raw-loader',
     },
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
