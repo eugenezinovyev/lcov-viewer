@@ -24,5 +24,14 @@
   },
   "files": [
     "lib/**/*.*"
-  ]
+  ],
+  "directories": {
+    "lib": "lib"
+  },
+  "description": "An Istanbul report to generate LCOV viewer report.",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/eugenezinovyev/lcov-viewer.git",
+    "directory": "packages/istanbul-report"
+  }
 }

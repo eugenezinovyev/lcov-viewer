@@ -1,5 +1,6 @@
 {
   "name": "lcov-viewer",
+  "description": "LCOV viewer",
   "version": "1.0.0",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "license": "MIT",
@@ -45,5 +46,10 @@
     "webpack-bundle-analyzer": "^4.5.0",
     "webpack-cli": "^4.9.1",
     "webpack-dev-server": "^4.3.1"
+  },
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eugenezinovyev/lcov-viewer.git"
   }
 }
