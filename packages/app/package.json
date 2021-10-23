@@ -1,6 +1,6 @@
 {
   "name": "@lcov-viewer/app",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "main": "src/index.js",
   "license": "MIT",
@@ -11,12 +11,12 @@
     "test": "../../node_modules/.bin/jest --colors"
   },
   "devDependencies": {
-    "@lcov-viewer/istanbul-report": "^1.0.0",
+    "@lcov-viewer/istanbul-report": "^1.0.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/preact": "^2.0.1"
   },
   "dependencies": {
-    "@lcov-viewer/tree-view": "^1.0.0",
+    "@lcov-viewer/tree-view": "^1.0.1",
     "clsx": "^1.1.1",
     "lcov-parse": "^1.0.0",
     "preact": "^10.5.15",

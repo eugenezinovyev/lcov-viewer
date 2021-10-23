@@ -1,6 +1,6 @@
 {
   "name": "@lcov-viewer/demo-tree-view",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "main": "index.js",
   "license": "MIT",
@@ -10,7 +10,7 @@
     "start": "webpack serve"
   },
   "dependencies": {
-    "@lcov-viewer/tree-view": "^1.0.0",
+    "@lcov-viewer/tree-view": "^1.0.1",
     "clsx": "^1.1.1",
     "preact": "^10.5.15"
   },

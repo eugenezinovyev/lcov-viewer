@@ -1,6 +1,6 @@
 {
   "name": "@lcov-viewer/istanbul-report",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "private": false,
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "main": "lib/index.js",
@@ -13,7 +13,7 @@
     "istanbul-lib-report": "^3.0.0"
   },
   "devDependencies": {
-    "@lcov-viewer/tree-view": "^1.0.0",
+    "@lcov-viewer/tree-view": "^1.0.1",
     "clsx": "^1.1.1",
     "copy-webpack-plugin": "^9.0.1",
     "html-inline-css-webpack-plugin": "^1.11.1",
