@@ -1,6 +1,7 @@
 {
   "name": "@lcov-viewer/istanbul-report",
   "version": "1.0.0",
+  "private": false,
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "main": "lib/index.js",
   "license": "MIT",
@@ -9,9 +10,7 @@
     "analyze": "webpack --mode=production --analyze"
   },
   "dependencies": {
-    "istanbul-lib-report": "^3.0.0",
-    "license-webpack-plugin": "^3.0.0",
-    "terser-webpack-plugin": "^5.2.4"
+    "istanbul-lib-report": "^3.0.0"
   },
   "devDependencies": {
     "@lcov-viewer/tree-view": "^1.0.0",
@@ -20,7 +19,9 @@
     "html-inline-css-webpack-plugin": "^1.11.1",
     "html-inline-script-webpack-plugin": "^2.0.2",
     "html-webpack-plugin": "^5.4.0",
-    "preact": "^10.5.15"
+    "license-webpack-plugin": "^3.0.0",
+    "preact": "^10.5.15",
+    "terser-webpack-plugin": "^5.2.4"
   },
   "files": [
     "lib/**/*.*"
