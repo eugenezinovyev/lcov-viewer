@@ -1,9 +1,8 @@
-const configurator = require('../../jest.base-config');
+const configurator = require('./jest.base-config');
 
 const config = configurator({
   coverageReporters: [
     'lcov',
-    'json',
     '@lcov-viewer/istanbul-report',
   ],
   moduleNameMapper: {

@@ -8,6 +8,10 @@
     "packages/*",
     "packages/demo/*"
   ],
+  "scripts": {
+    "test": "lerna run test --stream",
+    "version:update": "lerna version --no-push"
+  },
   "devDependencies": {
     "@babel/cli": "^7.15.7",
     "@babel/core": "^7.15.8",
@@ -26,6 +30,7 @@
     "jest": "^27.3.0",
     "jest-raw-loader": "^1.0.1",
     "json-minimizer-webpack-plugin": "^3.1.0",
+    "lerna": "^4.0.0",
     "less": "^4.1.2",
     "less-loader": "^10.2.0",
     "mini-css-extract-plugin": "^2.4.2",
