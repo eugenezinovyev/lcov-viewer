@@ -1,3 +1,5 @@
+![build](https://github.com/eugenezinovyev/lcov-viewer/actions/workflows/main.yml/badge.svg)
+
 # LCOV viewer
 
 Parses LCOV file and generates coverage tree view.
