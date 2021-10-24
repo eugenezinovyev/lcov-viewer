@@ -1,3 +1,6 @@
+![build](https://github.com/eugenezinovyev/lcov-viewer/actions/workflows/main.yml/badge.svg)
+[![Known Vulnerabilities](https://snyk.io/test/github/eugenezinovyev/lcov-viewer/badge.svg?targetFile=package.json)](https://snyk.io/test/github/eugenezinovyev/lcov-viewer?targetFile=package.json)
+
 # LCOV viewer
 
 Parses LCOV file and generates coverage tree view.
