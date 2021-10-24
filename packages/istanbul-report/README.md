@@ -2,7 +2,6 @@
 [![Known Vulnerabilities](https://snyk.io/test/github/eugenezinovyev/lcov-viewer/badge.svg?targetFile=packages%2Fistanbul-report%2Fpackage.json)](https://snyk.io/test/github/eugenezinovyev/lcov-viewer?targetFile=packages%2Fistanbul-report%2Fpackage.json)
 [![npm version](https://badge.fury.io/js/@lcov-viewer%2Fistanbul-report.svg)](https://badge.fury.io/js/@lcov-viewer/istanbul-report)
 
-[![https://nodei.co/npm/@lcov-viewer/istanbul-report.png?downloads=true&downloadRank=true&stars=true](https://nodei.co/npm/@lcov-viewer/istanbul-report.png?downloads=true&downloadRank=true&stars=true)](https://www.npmjs.com/package/@lcov-viewer/istanbul-report)
 # LCOV viewer Istanbul report
 
 Generates coverage report 
