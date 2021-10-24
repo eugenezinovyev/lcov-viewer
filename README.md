@@ -21,7 +21,7 @@ This repository uses Yarn workspaces. Please use Yarn to
 
 The repository provides Istanbul report generator.
 ```
-yarn add -D @lcov-viewer/istanbul-report~~~~
+yarn add -D @lcov-viewer/istanbul-report
 ```
 Please see docs [here](/packages/istanbul-report).
 
