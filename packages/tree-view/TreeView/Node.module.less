@@ -1,9 +1,12 @@
 .root {
-  cursor: pointer;
+  cursor: default;
 
   &.folder {
     .title {
+      white-space: nowrap;
       &:before {
+        color: hsl(319 58% 50% / 1);
+        cursor: pointer;
         display: inline-block;
         content: "\002B";
         width: 12px;

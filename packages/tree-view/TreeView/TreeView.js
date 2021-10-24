@@ -4,7 +4,7 @@ import { buildCoverageTree } from './coverageTree';
 import Node from './Node';
 import classes from './TreeView.module.less';
 
-const TreeView = ({ coverage }) => {
+const TreeView = ({ coverage, lineTitle }) => {
   const tree = buildCoverageTree(coverage);
 
   return (
@@ -22,7 +22,7 @@ const TreeView = ({ coverage }) => {
         </tr>
         </thead>
         <tbody>
-        <Node name={tree.name} tree={tree} coverage={coverage}/>
+        <Node name={tree.name} tree={tree} coverage={coverage} lineTitle={lineTitle}/>
         </tbody>
         <tfoot>
         <tr>
@@ -32,6 +32,12 @@ const TreeView = ({ coverage }) => {
       </table>
     </CollapseProvider>
   );
+};
+
+const LineTitle = ({ name }) => (name);
+
+TreeView.defaultProps = {
+  lineTitle: LineTitle,
 };
 
 export default TreeView;

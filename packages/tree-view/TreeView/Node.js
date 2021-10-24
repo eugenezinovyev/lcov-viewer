@@ -15,16 +15,16 @@ const calculatePadding = (depth) => {
   return paddingCache[depth];
 };
 
-const LeafNode = ({ name, tree, coverage, depth }) => (
+const LeafNode = ({ name, tree, coverage, depth, lineTitle }) => (
   <tr className={classes.root}>
     <td className={classes.title} style={calculatePadding(depth)}>
-      {name}
+      {React.createElement(lineTitle, { name, tree, coverage, depth })}
     </td>
     <NodeStats tree={tree} coverage={coverage}/>
   </tr>
 );
 
-const BranchNode = ({ name, tree, coverage, depth }) => {
+const BranchNode = ({ name, tree, coverage, depth, lineTitle }) => {
   const toggleCollapsed = useCollapse(tree.path);
   const collapsed = useCollapsedState(tree.path);
   const nodeClasses = clsx(classes.root, classes.folder, !collapsed && classes.open);
@@ -33,21 +33,23 @@ const BranchNode = ({ name, tree, coverage, depth }) => {
     <React.Fragment>
       <tr className={nodeClasses} onClick={toggleCollapsed} role="group">
         <td className={classes.title} style={calculatePadding(depth)}>
-          {name}
+          {React.createElement(lineTitle, { name, tree, coverage, depth })}
         </td>
         <NodeStats tree={tree} coverage={coverage}/>
       </tr>
       {!collapsed && (
-        Object.keys(tree.children).map((key) => <Node key={key} name={key} tree={tree.children[key]} coverage={coverage} depth={depth + 1}/>)
+        Object.keys(tree.children).map((key) => (
+          <Node key={key} name={key} tree={tree.children[key]} coverage={coverage} depth={depth + 1} lineTitle={lineTitle}/>
+        ))
       )}
     </React.Fragment>
   );
 };
 
-const Node = ({ name, tree, coverage, depth }) => {
+const Node = ({ name, tree, coverage, depth, lineTitle }) => {
   return tree.type === BRANCH_NODE
-    ? <BranchNode name={name} tree={tree} coverage={coverage} depth={depth}/>
-    : <LeafNode name={name} tree={tree} coverage={coverage} depth={depth}/>;
+    ? <BranchNode name={name} tree={tree} coverage={coverage} depth={depth} lineTitle={lineTitle}/>
+    : <LeafNode name={name} tree={tree} coverage={coverage} depth={depth} lineTitle={lineTitle}/>;
 };
 
 Node.defaultProps = {
