@@ -10,6 +10,7 @@
     "packages/demo/*"
   ],
   "scripts": {
+    "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "version:update": "lerna version --no-push"
   },
