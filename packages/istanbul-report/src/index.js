@@ -38,11 +38,34 @@ class IstanbulReport extends ReportBase {
     });
   }
 
-  onDetail(node) {
+  onDetail(node, context) {
     const qualifiedName = node.getQualifiedName();
     const metrics = node.getCoverageSummary();
+    this.collectedData[qualifiedName] = {
+      metrics: buildMetrics(metrics),
+      path: qualifiedName,
+      filename: node.getRelativeName(),
+      details: {
+        lines: undefined,
+      },
+    };
 
-    this.collectedData[qualifiedName] = { metrics: buildMetrics(metrics), path: qualifiedName, filename: node.getRelativeName() };
+    const fileCoverage = node.getFileCoverage();
+    const sourceText = context.getSource(fileCoverage.path);
+    const lineStats = fileCoverage.getLineCoverage();
+
+    if (lineStats) {
+      this.collectedData[qualifiedName].details.lines = sourceText.split(/\r?\n|\r/)
+        .map((line, index) => {
+          const lineNumber = index + 1;
+
+          return ({
+            line: lineNumber,
+            hits: lineStats[lineNumber.toString()] || 0,
+            text: line,
+          });
+        });
+    }
   }
 
   onEnd() {
@@ -51,7 +74,9 @@ class IstanbulReport extends ReportBase {
     const self = this;
     fs.readFile(reportFile, 'utf8', function (err, data) {
       if (!err) {
-        const result = data.replace(/COVERAGE_DATA_PLACEHOLDER/g, JSON.stringify(self.collectedData));
+        const result = data
+          .replace(/COVERAGE_DATA_PLACEHOLDER/g, JSON.stringify(self.collectedData))
+          .replace(/REPORT_DATE_PLACEHOLDER/, `'${new Date().toString()}'`);
         fs.writeFile(reportFile, result, 'utf8', err => err && console.error(err));
       } else {
         console.error(err);

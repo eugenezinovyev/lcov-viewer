@@ -1,236 +1,342 @@
 {
-  "CollapseProvider/CollapseContext.js": {
-    "metrics": {
-      "lines": {
-        "total": 5,
-        "covered": 5
-      },
-      "functions": {
-        "total": 0,
-        "covered": 0
-      },
-      "branches": {
-        "total": 0,
-        "covered": 0
-      }
-    },
-    "path": "CollapseProvider/CollapseContext.js",
-    "filename": "CollapseContext.js"
+  "components/App.js": {
+    "metrics": { "lines": { "total": 25, "covered": 25 }, "functions": { "total": 1, "covered": 1 }, "branches": { "total": 1, "covered": 1 } },
+    "path": "components/App.js",
+    "filename": "App.js",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": "import React from 'react';" },
+        { "line": 2, "hits": 1, "text": "import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';" },
+        { "line": 3, "hits": 1, "text": "import CoverageDataProvider from './CoverageDataProvider/CoverageDataProvider';" },
+        { "line": 4, "hits": 1, "text": "import LcovImport from './LcovImport/LcovImport';" },
+        { "line": 5, "hits": 1, "text": "import Report from './Report/Report';" },
+        { "line": 6, "hits": 1, "text": "" },
+        { "line": 7, "hits": 1, "text": "const App = () => (" },
+        { "line": 8, "hits": 6, "text": "  <CoverageDataProvider>" },
+        { "line": 9, "hits": 6, "text": "    <BrowserRouter>" },
+        { "line": 10, "hits": 6, "text": "      <Switch>" },
+        { "line": 11, "hits": 6, "text": "        <Route exact path=\"/\">" },
+        { "line": 12, "hits": 6, "text": "          <LcovImport/>" },
+        { "line": 13, "hits": 6, "text": "        </Route>" },
+        { "line": 14, "hits": 6, "text": "        <Route exact path=\"/report\">" },
+        { "line": 15, "hits": 6, "text": "          <Report/>" },
+        { "line": 16, "hits": 6, "text": "        </Route>" },
+        { "line": 17, "hits": 6, "text": "        <Route>" },
+        { "line": 18, "hits": 1, "text": "          <Redirect to=\"/\" />" },
+        { "line": 19, "hits": 1, "text": "        </Route>" },
+        { "line": 20, "hits": 1, "text": "      </Switch>" },
+        { "line": 21, "hits": 1, "text": "    </BrowserRouter>" },
+        { "line": 22, "hits": 1, "text": "  </CoverageDataProvider>" },
+        { "line": 23, "hits": 1, "text": ");" },
+        { "line": 24, "hits": 1, "text": "" },
+        { "line": 25, "hits": 1, "text": "export default App;" },
+        { "line": 26, "hits": 0, "text": "" }
+      ]
+    }
   },
-  "CollapseProvider/CollapseProvider.js": {
-    "metrics": {
-      "lines": {
-        "total": 21,
-        "covered": 21
-      },
-      "functions": {
-        "total": 3,
-        "covered": 3
-      },
-      "branches": {
-        "total": 4,
-        "covered": 4
-      }
-    },
-    "path": "CollapseProvider/CollapseProvider.js",
-    "filename": "CollapseProvider.js"
+  "components/CoverageDataProvider/CoverageDataContext.js": {
+    "metrics": { "lines": { "total": 5, "covered": 5 }, "functions": { "total": 0, "covered": 0 }, "branches": { "total": 0, "covered": 0 } },
+    "path": "components/CoverageDataProvider/CoverageDataContext.js",
+    "filename": "CoverageDataContext.js",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": "import { createContext } from 'react';" },
+        { "line": 2, "hits": 1, "text": "" },
+        { "line": 3, "hits": 1, "text": "const CoverageDataContext = createContext();" },
+        { "line": 4, "hits": 1, "text": "" },
+        { "line": 5, "hits": 1, "text": "export default CoverageDataContext;" },
+        { "line": 6, "hits": 0, "text": "" }
+      ]
+    }
   },
-  "CollapseProvider/findNode.js": {
-    "metrics": {
-      "lines": {
-        "total": 3,
-        "covered": 3
-      },
-      "functions": {
-        "total": 1,
-        "covered": 1
-      },
-      "branches": {
-        "total": 2,
-        "covered": 2
-      }
-    },
-    "path": "CollapseProvider/findNode.js",
-    "filename": "findNode.js"
+  "components/CoverageDataProvider/CoverageDataProvider.js": {
+    "metrics": { "lines": { "total": 14, "covered": 14 }, "functions": { "total": 1, "covered": 1 }, "branches": { "total": 1, "covered": 1 } },
+    "path": "components/CoverageDataProvider/CoverageDataProvider.js",
+    "filename": "CoverageDataProvider.js",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": "import React, { useRef } from 'react';" },
+        { "line": 2, "hits": 1, "text": "import CoverageDataContext from './CoverageDataContext';" },
+        { "line": 3, "hits": 1, "text": "" },
+        { "line": 4, "hits": 1, "text": "const CoverageDataProvider = ({ children }) => {" },
+        { "line": 5, "hits": 6, "text": "  const value = useRef({ data: null, subscriptions: [] });" },
+        { "line": 6, "hits": 6, "text": "" },
+        { "line": 7, "hits": 6, "text": "  return (" },
+        { "line": 8, "hits": 6, "text": "    <CoverageDataContext.Provider value={value}>" },
+        { "line": 9, "hits": 6, "text": "      {children}" },
+        { "line": 10, "hits": 6, "text": "    </CoverageDataContext.Provider>" },
+        { "line": 11, "hits": 6, "text": "  );" },
+        { "line": 12, "hits": 6, "text": "};" },
+        { "line": 13, "hits": 1, "text": "" },
+        { "line": 14, "hits": 1, "text": "export default CoverageDataProvider;" },
+        { "line": 15, "hits": 0, "text": "" }
+      ]
+    }
   },
-  "CollapseProvider/useCollapse.js": {
-    "metrics": {
-      "lines": {
-        "total": 18,
-        "covered": 12
-      },
-      "functions": {
-        "total": 1,
-        "covered": 1
-      },
-      "branches": {
-        "total": 1,
-        "covered": 1
-      }
-    },
-    "path": "CollapseProvider/useCollapse.js",
-    "filename": "useCollapse.js"
+  "components/CoverageDataProvider/useCoverageData.js": {
+    "metrics": { "lines": { "total": 24, "covered": 24 }, "functions": { "total": 2, "covered": 1 }, "branches": { "total": 4, "covered": 4 } },
+    "path": "components/CoverageDataProvider/useCoverageData.js",
+    "filename": "useCoverageData.js",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": "import { useContext, useEffect, useState } from 'react';" },
+        { "line": 2, "hits": 1, "text": "import CoverageDataContext from './CoverageDataContext';" },
+        { "line": 3, "hits": 1, "text": "" },
+        { "line": 4, "hits": 1, "text": "const useCoverageData = () => {" },
+        { "line": 5, "hits": 11, "text": "  const [, forceUpdate] = useState();" },
+        { "line": 6, "hits": 11, "text": "  const context = useContext(CoverageDataContext).current;" },
+        { "line": 7, "hits": 11, "text": "" },
+        { "line": 8, "hits": 11, "text": "  useEffect(() => {" },
+        { "line": 9, "hits": 6, "text": "    const notify = () => forceUpdate({});" },
+        { "line": 10, "hits": 6, "text": "    context.subscriptions.push(notify);" },
+        { "line": 11, "hits": 6, "text": "" },
+        { "line": 12, "hits": 6, "text": "    return () => {" },
+        { "line": 13, "hits": 6, "text": "      const index = context.subscriptions.findIndex(cb => cb === notify);" },
+        { "line": 14, "hits": 6, "text": "" },
+        { "line": 15, "hits": 6, "text": "      if (index > -1) {" },
+        { "line": 16, "hits": 6, "text": "        context.subscriptions.splice(index, 1);" },
+        { "line": 17, "hits": 6, "text": "      }" },
+        { "line": 18, "hits": 6, "text": "    };" },
+        { "line": 19, "hits": 11, "text": "  }, [context]);" },
+        { "line": 20, "hits": 11, "text": "" },
+        { "line": 21, "hits": 11, "text": "  return context.data;" },
+        { "line": 22, "hits": 11, "text": "};" },
+        { "line": 23, "hits": 1, "text": "" },
+        { "line": 24, "hits": 1, "text": "export default useCoverageData;" },
+        { "line": 25, "hits": 0, "text": "" }
+      ]
+    }
   },
-  "CollapseProvider/useCollapsedState.js": {
-    "metrics": {
-      "lines": {
-        "total": 30,
-        "covered": 30
-      },
-      "functions": {
-        "total": 2,
-        "covered": 1
-      },
-      "branches": {
-        "total": 4,
-        "covered": 4
-      }
-    },
-    "path": "CollapseProvider/useCollapsedState.js",
-    "filename": "useCollapsedState.js"
+  "components/CoverageDataProvider/useCoverageDataControl.js": {
+    "metrics": { "lines": { "total": 24, "covered": 21 }, "functions": { "total": 1, "covered": 1 }, "branches": { "total": 4, "covered": 3 } },
+    "path": "components/CoverageDataProvider/useCoverageDataControl.js",
+    "filename": "useCoverageDataControl.js",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": "import { useCallback, useContext } from 'react';" },
+        { "line": 2, "hits": 1, "text": "import CoverageDataContext from './CoverageDataContext';" },
+        { "line": 3, "hits": 1, "text": "" },
+        { "line": 4, "hits": 1, "text": "const useCoverageDataControl = () => {" },
+        { "line": 5, "hits": 18, "text": "  const context = useContext(CoverageDataContext).current;" },
+        { "line": 6, "hits": 18, "text": "  const dispatch = useCallback((type, payload) => {" },
+        { "line": 7, "hits": 6, "text": "    switch (type) {" },
+        { "line": 8, "hits": 6, "text": "      case 'set':" },
+        { "line": 9, "hits": 6, "text": "        context.data = payload;" },
+        { "line": 10, "hits": 6, "text": "        context.subscriptions.forEach(cb => cb());" },
+        { "line": 11, "hits": 6, "text": "        break;" },
+        { "line": 12, "hits": 6, "text": "      case 'unset':" },
+        { "line": 13, "hits": 0, "text": "        context.data = null;" },
+        { "line": 14, "hits": 0, "text": "        context.subscriptions.forEach(cb => cb());" },
+        { "line": 15, "hits": 0, "text": "        break;" },
+        { "line": 16, "hits": 6, "text": "    }" },
+        { "line": 17, "hits": 18, "text": "  }, [context]);" },
+        { "line": 18, "hits": 18, "text": "  const set = useCallback((data) => dispatch('set', data), [context]);" },
+        { "line": 19, "hits": 18, "text": "  const unset = useCallback(() => dispatch('unset'), [context]);" },
+        { "line": 20, "hits": 18, "text": "" },
+        { "line": 21, "hits": 18, "text": "  return [set, unset];" },
+        { "line": 22, "hits": 18, "text": "};" },
+        { "line": 23, "hits": 1, "text": "" },
+        { "line": 24, "hits": 1, "text": "export default useCoverageDataControl;" },
+        { "line": 25, "hits": 0, "text": "" }
+      ]
+    }
   },
-  "TreeView/Node.js": {
-    "metrics": {
-      "lines": {
-        "total": 61,
-        "covered": 61
-      },
-      "functions": {
-        "total": 4,
-        "covered": 4
-      },
-      "branches": {
-        "total": 9,
-        "covered": 7
-      }
-    },
-    "path": "TreeView/Node.js",
-    "filename": "Node.js"
+  "components/LcovImport/LcovImport.js": {
+    "metrics": { "lines": { "total": 43, "covered": 38 }, "functions": { "total": 1, "covered": 1 }, "branches": { "total": 6, "covered": 3 } },
+    "path": "components/LcovImport/LcovImport.js",
+    "filename": "LcovImport.js",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": "import clsx from 'clsx';" },
+        { "line": 2, "hits": 1, "text": "import React, { useCallback, useState } from 'react';" },
+        { "line": 3, "hits": 1, "text": "import { useDropzone } from 'react-dropzone';" },
+        { "line": 4, "hits": 1, "text": "import { useHistory } from 'react-router-dom';" },
+        { "line": 5, "hits": 1, "text": "import buildCoverage from '../../utils/buildCoverage';" },
+        { "line": 6, "hits": 1, "text": "import readLcov from '../../utils/readLcov';" },
+        { "line": 7, "hits": 1, "text": "import useCoverageDataControl from '../CoverageDataProvider/useCoverageDataControl';" },
+        { "line": 8, "hits": 1, "text": "import classes from './LcovImport.module.less';" },
+        { "line": 9, "hits": 1, "text": "" },
+        { "line": 10, "hits": 1, "text": "const LcovImport = () => {" },
+        { "line": 11, "hits": 18, "text": "  const [error, setError] = useState(undefined);" },
+        { "line": 12, "hits": 18, "text": "  const [set] = useCoverageDataControl();" },
+        { "line": 13, "hits": 18, "text": "  const history = useHistory();" },
+        { "line": 14, "hits": 18, "text": "  const onDrop = useCallback((files) => {" },
+        { "line": 15, "hits": 6, "text": "    if (files.length <= 0) {" },
+        { "line": 16, "hits": 0, "text": "      return;" },
+        { "line": 17, "hits": 0, "text": "    }" },
+        { "line": 18, "hits": 6, "text": "" },
+        { "line": 19, "hits": 6, "text": "    readLcov(files[0]).then(" },
+        { "line": 20, "hits": 6, "text": "      (coverage) => {" },
+        { "line": 21, "hits": 6, "text": "        set(buildCoverage(coverage));" },
+        { "line": 22, "hits": 6, "text": "        history.push('/report');" },
+        { "line": 23, "hits": 6, "text": "      }," },
+        { "line": 24, "hits": 6, "text": "      ([error, msg]) => {" },
+        { "line": 25, "hits": 0, "text": "        console.error(error);" },
+        { "line": 26, "hits": 0, "text": "        setError(msg);" },
+        { "line": 27, "hits": 0, "text": "      }," },
+        { "line": 28, "hits": 6, "text": "    );" },
+        { "line": 29, "hits": 18, "text": "  }, [set, history]);" },
+        { "line": 30, "hits": 18, "text": "  const { isDragActive, getRootProps, getInputProps } = useDropzone({ onDrop });" },
+        { "line": 31, "hits": 18, "text": "" },
+        { "line": 32, "hits": 18, "text": "  return (" },
+        { "line": 33, "hits": 18, "text": "    <div className={classes.root}>" },
+        { "line": 34, "hits": 18, "text": "      <div className={clsx(classes.dropper, isDragActive && classes.active)} {...getRootProps()}>" },
+        { "line": 35, "hits": 18, "text": "        <input {...getInputProps()} />" },
+        { "line": 36, "hits": 18, "text": "        <span>Drop your LCOV file here</span>" },
+        { "line": 37, "hits": 18, "text": "        {error && <span className={classes.error}>{error}</span>}" },
+        { "line": 38, "hits": 18, "text": "      </div>" },
+        { "line": 39, "hits": 18, "text": "    </div>" },
+        { "line": 40, "hits": 18, "text": "  );" },
+        { "line": 41, "hits": 18, "text": "};" },
+        { "line": 42, "hits": 1, "text": "" },
+        { "line": 43, "hits": 1, "text": "export default LcovImport;" },
+        { "line": 44, "hits": 0, "text": "" }
+      ]
+    }
   },
-  "TreeView/Node.module.less": {
-    "metrics": {
-      "lines": {
-        "total": 36,
-        "covered": 36
-      },
-      "functions": {
-        "total": 1,
-        "covered": 1
-      },
-      "branches": {
-        "total": 2,
-        "covered": 2
-      }
-    },
-    "path": "TreeView/Node.module.less",
-    "filename": "Node.module.less"
+  "components/LcovImport/LcovImport.module.less": {
+    "metrics": { "lines": { "total": 36, "covered": 36 }, "functions": { "total": 1, "covered": 1 }, "branches": { "total": 2, "covered": 2 } },
+    "path": "components/LcovImport/LcovImport.module.less",
+    "filename": "LcovImport.module.less",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": ".root {" },
+        { "line": 2, "hits": 1, "text": "  flex: 1;" },
+        { "line": 3, "hits": 1, "text": "  display: flex;" },
+        { "line": 4, "hits": 1, "text": "  flex-direction: column;" },
+        { "line": 5, "hits": 1, "text": "  width: 100%;" },
+        { "line": 6, "hits": 1, "text": "  height: 100%;" },
+        { "line": 7, "hits": 1, "text": "  align-items: center;" },
+        { "line": 8, "hits": 1, "text": "  justify-content: center;" },
+        { "line": 9, "hits": 1, "text": "}" },
+        { "line": 10, "hits": 1, "text": "" },
+        { "line": 11, "hits": 1, "text": ".dropper {" },
+        { "line": 12, "hits": 1, "text": "  cursor: pointer;" },
+        { "line": 13, "hits": 1, "text": "  flex: 0 1 50%;" },
+        { "line": 14, "hits": 1, "text": "  width: 50%;" },
+        { "line": 15, "hits": 1, "text": "  box-sizing: border-box;" },
+        { "line": 16, "hits": 1, "text": "  box-shadow: 0 0 3px 1px rgba(211, 71, 166, 0.29), 0 0 2px 0 rgba(211, 71, 166, 0.59);" },
+        { "line": 17, "hits": 1, "text": "  border-radius: 3px;" },
+        { "line": 18, "hits": 1, "text": "  color: #4a4a4a;" },
+        { "line": 19, "hits": 1, "text": "  user-select: none;" },
+        { "line": 20, "hits": 1, "text": "  display: flex;" },
+        { "line": 21, "hits": 1, "text": "  flex-direction: column;" },
+        { "line": 22, "hits": 1, "text": "  align-items: center;" },
+        { "line": 23, "hits": 1, "text": "  justify-content: center;" },
+        { "line": 24, "hits": 1, "text": "" },
+        { "line": 25, "hits": 1, "text": "  &.active {" },
+        { "line": 26, "hits": 1, "text": "    background-color: rgba(211, 71, 166, 0.09);" },
+        { "line": 27, "hits": 1, "text": "  }" },
+        { "line": 28, "hits": 1, "text": "" },
+        { "line": 29, "hits": 1, "text": "  &:hover {" },
+        { "line": 30, "hits": 1, "text": "    box-shadow: 0 0 5px 2px rgba(211, 71, 166, 0.29), 0 0 1px 1px rgba(211, 71, 166, 0.59);" },
+        { "line": 31, "hits": 1, "text": "  }" },
+        { "line": 32, "hits": 1, "text": "}" },
+        { "line": 33, "hits": 1, "text": "" },
+        { "line": 34, "hits": 1, "text": ".error {" },
+        { "line": 35, "hits": 1, "text": "  color: #d3343c;" },
+        { "line": 36, "hits": 1, "text": "}" },
+        { "line": 37, "hits": 0, "text": "" }
+      ]
+    }
   },
-  "TreeView/NodeStats.js": {
-    "metrics": {
-      "lines": {
-        "total": 61,
-        "covered": 61
-      },
-      "functions": {
-        "total": 3,
-        "covered": 3
-      },
-      "branches": {
-        "total": 15,
-        "covered": 13
-      }
-    },
-    "path": "TreeView/NodeStats.js",
-    "filename": "NodeStats.js"
+  "components/Report/Report.js": {
+    "metrics": { "lines": { "total": 17, "covered": 17 }, "functions": { "total": 1, "covered": 1 }, "branches": { "total": 3, "covered": 3 } },
+    "path": "components/Report/Report.js",
+    "filename": "Report.js",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": "import TreeView from '@lcov-viewer/tree-view';" },
+        { "line": 2, "hits": 1, "text": "import React from 'react';" },
+        { "line": 3, "hits": 1, "text": "import { Redirect } from 'react-router-dom';" },
+        { "line": 4, "hits": 1, "text": "import useCoverageData from '../CoverageDataProvider/useCoverageData';" },
+        { "line": 5, "hits": 1, "text": "import classes from './Report.module.less';" },
+        { "line": 6, "hits": 1, "text": "" },
+        { "line": 7, "hits": 1, "text": "const Report = () => {" },
+        { "line": 8, "hits": 11, "text": "  const coverage = useCoverageData();" },
+        { "line": 9, "hits": 11, "text": "" },
+        { "line": 10, "hits": 11, "text": "  return (" },
+        { "line": 11, "hits": 11, "text": "    <div className={classes.root}>" },
+        { "line": 12, "hits": 11, "text": "      {coverage ? <TreeView coverage={coverage}/> : <Redirect to=\"/\"/>}" },
+        { "line": 13, "hits": 11, "text": "    </div>" },
+        { "line": 14, "hits": 11, "text": "  );" },
+        { "line": 15, "hits": 11, "text": "};" },
+        { "line": 16, "hits": 1, "text": "" },
+        { "line": 17, "hits": 1, "text": "export default Report;" },
+        { "line": 18, "hits": 0, "text": "" }
+      ]
+    }
   },
-  "TreeView/NodeStats.module.less": {
-    "metrics": {
-      "lines": {
-        "total": 15,
-        "covered": 15
-      },
-      "functions": {
-        "total": 1,
-        "covered": 1
-      },
-      "branches": {
-        "total": 2,
-        "covered": 2
-      }
-    },
-    "path": "TreeView/NodeStats.module.less",
-    "filename": "NodeStats.module.less"
+  "components/Report/Report.module.less": {
+    "metrics": { "lines": { "total": 7, "covered": 7 }, "functions": { "total": 1, "covered": 1 }, "branches": { "total": 2, "covered": 2 } },
+    "path": "components/Report/Report.module.less",
+    "filename": "Report.module.less",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": ".root {" },
+        { "line": 2, "hits": 1, "text": "  flex: 1;" },
+        { "line": 3, "hits": 1, "text": "  display: flex;" },
+        { "line": 4, "hits": 1, "text": "  flex-direction: column;" },
+        { "line": 5, "hits": 1, "text": "  overflow: auto;" },
+        { "line": 6, "hits": 1, "text": "  padding: 16px;" },
+        { "line": 7, "hits": 1, "text": "}" }
+      ]
+    }
   },
-  "TreeView/SubTree.js": {
-    "metrics": {
-      "lines": {
-        "total": 10,
-        "covered": 10
-      },
-      "functions": {
-        "total": 1,
-        "covered": 1
-      },
-      "branches": {
-        "total": 2,
-        "covered": 2
-      }
-    },
-    "path": "TreeView/SubTree.js",
-    "filename": "SubTree.js"
+  "utils/buildCoverage.js": {
+    "metrics": { "lines": { "total": 17, "covered": 12 }, "functions": { "total": 1, "covered": 1 }, "branches": { "total": 2, "covered": 2 } },
+    "path": "utils/buildCoverage.js",
+    "filename": "buildCoverage.js",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": "const buildCoverage = (records) => records.reduce((aggregate, record) => {" },
+        { "line": 2, "hits": 58, "text": "  const path = record.file.replace(/\\\\/g, '/').replace(/^(.):/, '/$1').replace(/^\\//, '');" },
+        { "line": 3, "hits": 58, "text": "" },
+        { "line": 4, "hits": 58, "text": "  aggregate[path] = {" },
+        { "line": 5, "hits": 58, "text": "    metrics: {" },
+        { "line": 6, "hits": 58, "text": "      lines: { total: record.lines.found, covered: record.lines.hit }," },
+        { "line": 7, "hits": 58, "text": "      functions: { total: record.functions.found, covered: record.functions.hit }," },
+        { "line": 8, "hits": 58, "text": "      branches: { total: record.branches.found, covered: record.branches.hit }," },
+        { "line": 9, "hits": 58, "text": "    }," },
+        { "line": 10, "hits": 58, "text": "    path: path," },
+        { "line": 11, "hits": 58, "text": "    filename: path.split('/').pop()," },
+        { "line": 12, "hits": 58, "text": "  };" },
+        { "line": 13, "hits": 58, "text": "" },
+        { "line": 14, "hits": 58, "text": "  return aggregate;" },
+        { "line": 15, "hits": 1, "text": "}, {});" },
+        { "line": 16, "hits": 1, "text": "" },
+        { "line": 17, "hits": 1, "text": "export default buildCoverage;" },
+        { "line": 18, "hits": 0, "text": "" }
+      ]
+    }
   },
-  "TreeView/TreeView.js": {
-    "metrics": {
-      "lines": {
-        "total": 32,
-        "covered": 32
-      },
-      "functions": {
-        "total": 1,
-        "covered": 1
-      },
-      "branches": {
-        "total": 1,
-        "covered": 1
-      }
-    },
-    "path": "TreeView/TreeView.js",
-    "filename": "TreeView.js"
-  },
-  "TreeView/TreeView.module.less": {
-    "metrics": {
-      "lines": {
-        "total": 21,
-        "covered": 21
-      },
-      "functions": {
-        "total": 1,
-        "covered": 1
-      },
-      "branches": {
-        "total": 2,
-        "covered": 2
-      }
-    },
-    "path": "TreeView/TreeView.module.less",
-    "filename": "TreeView.module.less"
-  },
-  "TreeView/coverageTree.js": {
-    "metrics": {
-      "lines": {
-        "total": 26,
-        "covered": 26
-      },
-      "functions": {
-        "total": 1,
-        "covered": 1
-      },
-      "branches": {
-        "total": 5,
-        "covered": 5
-      }
-    },
-    "path": "TreeView/coverageTree.js",
-    "filename": "coverageTree.js"
+  "utils/readLcov.js": {
+    "metrics": { "lines": { "total": 19, "covered": 10 }, "functions": { "total": 3, "covered": 2 }, "branches": { "total": 5, "covered": 4 } },
+    "path": "utils/readLcov.js",
+    "filename": "readLcov.js",
+    "details": {
+      "lines": [
+        { "line": 1, "hits": 1, "text": "import { source as parseLCOV } from 'lcov-parse';" },
+        { "line": 2, "hits": 1, "text": "" },
+        { "line": 3, "hits": 1, "text": "const readLcov = (file) => new Promise((resolve, reject) => {" },
+        { "line": 4, "hits": 6, "text": "  const reader = new FileReader();" },
+        { "line": 5, "hits": 6, "text": "  reader.onload = () => {" },
+        { "line": 6, "hits": 0, "text": "    const lcovContent = reader.result;" },
+        { "line": 7, "hits": 0, "text": "    parseLCOV(lcovContent, (error, data) => {" },
+        { "line": 8, "hits": 0, "text": "      if (error) {" },
+        { "line": 9, "hits": 0, "text": "        reject([error, 'Failed to parse file']);" },
+        { "line": 10, "hits": 0, "text": "      } else {" },
+        { "line": 11, "hits": 0, "text": "        resolve(data);" },
+        { "line": 12, "hits": 0, "text": "      }" },
+        { "line": 13, "hits": 0, "text": "    });" },
+        { "line": 14, "hits": 6, "text": "  };" },
+        { "line": 15, "hits": 6, "text": "  reader.onerror = () => reject([reader.error, 'Failed to read file']);" },
+        { "line": 16, "hits": 6, "text": "  reader.readAsText(file);" },
+        { "line": 17, "hits": 6, "text": "});" },
+        { "line": 18, "hits": 1, "text": "" },
+        { "line": 19, "hits": 1, "text": "export default readLcov;" },
+        { "line": 20, "hits": 0, "text": "" }
+      ]
+    }
   }
 }

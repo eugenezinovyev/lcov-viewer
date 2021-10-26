@@ -1,0 +1,51 @@
+@import "~@lcov-viewer/core/styles/colors";
+@import "~@lcov-viewer/core/styles/layout";
+
+.root {
+  display: flex;
+  flex-direction: row;
+  white-space: nowrap;
+  align-items: center;
+
+  & + & {
+    margin-top: 0.25rem;
+  }
+}
+
+.percentage {
+  font-weight: bolder;
+  min-width: 5em;
+  font-size: 1.125rem;
+  display: inline-block;
+  text-align: right;
+  margin-right: 0.5rem;
+}
+
+.name {
+  display: inline-block;
+  flex: 1 0 auto;
+}
+
+.badge {
+  display: inline-block;
+  margin-left: 1rem;
+  text-align: right;
+  padding: 0.125em 0.25em;
+  background: rgba(0,0,0,0.19);
+  border-radius: @border-radius;
+
+  &.bad {
+    background-color: fade(@color-bad, @color-fade-1);
+    color: @color-bad;
+  }
+
+  &.normal {
+    background-color: fade(@color-normal, @color-fade-1);
+    color: @color-normal;
+  }
+
+  &.good {
+    background-color: fade(@color-good, @color-fade-1);
+    color: @color-good;
+  }
+}

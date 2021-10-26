@@ -8,7 +8,7 @@
     "build": "webpack --mode=production --node-env=production",
     "analyze": "webpack --mode=production --analyze",
     "start": "webpack serve",
-    "test": "../../node_modules/.bin/jest --colors"
+    "test": "../../node_modules/.bin/jest --colors --passWithNoTests"
   },
   "devDependencies": {
     "@lcov-viewer/istanbul-report": "^1.0.1",
@@ -16,8 +16,8 @@
     "@testing-library/preact": "^2.0.1"
   },
   "dependencies": {
-    "@lcov-viewer/tree-view": "^1.0.1",
-    "clsx": "^1.1.1",
+    "@lcov-viewer/components": "^1.0.1",
+    "@lcov-viewer/core": "^1.0.1",
     "lcov-parse": "^1.0.0",
     "preact": "^10.5.15",
     "react-dropzone": "^11.4.2",

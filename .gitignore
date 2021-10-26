@@ -3,3 +3,4 @@ dist/
 /.idea/
 /packages/demo/*/coverage/
 /packages/*/coverage/
+/coverage/

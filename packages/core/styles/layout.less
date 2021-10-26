@@ -1,0 +1,15 @@
+@import "colors";
+
+@border-radius: 2px;
+
+.shadow {
+  box-shadow: 0 0 3px 1px fade(@color-main, @color-fade-2), 0 0 2px 0 fade(@color-main, @color-fade-5);
+
+  &:hover {
+    box-shadow: 0 0 5px 2px fade(@color-main, @color-fade-2), 0 0 1px 1px fade(@color-main, @color-fade-5);
+  }
+}
+
+.selection {
+  background: fade(@color-main, @color-fade-1);
+}

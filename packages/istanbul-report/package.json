@@ -1,5 +1,10 @@
 {
   "name": "@lcov-viewer/istanbul-report",
+  "keywords": [
+    "coverage",
+    "istanbul",
+    "lcov"
+  ],
   "version": "1.0.1",
   "private": false,
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
@@ -7,20 +12,25 @@
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
-    "analyze": "webpack --mode=production --analyze"
+    "analyze": "webpack --mode=production --analyze",
+    "start": "webpack serve"
   },
   "dependencies": {
     "istanbul-lib-report": "^3.0.0"
   },
   "devDependencies": {
-    "@lcov-viewer/tree-view": "^1.0.1",
-    "clsx": "^1.1.1",
+    "@lcov-viewer/components": "^1.0.1",
+    "@lcov-viewer/core": "^1.0.1",
     "copy-webpack-plugin": "^9.0.1",
+    "history": "^5.0.1",
     "html-inline-css-webpack-plugin": "^1.11.1",
     "html-inline-script-webpack-plugin": "^2.0.2",
     "html-webpack-plugin": "^5.4.0",
     "license-webpack-plugin": "^3.0.0",
     "preact": "^10.5.15",
+    "preact-router": "^3.2.1",
+    "prismjs": "^1.25.0",
+    "react-prism": "^4.3.2",
     "terser-webpack-plugin": "^5.2.4"
   },
   "files": [

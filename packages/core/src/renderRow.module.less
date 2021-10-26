@@ -1,0 +1,55 @@
+@import "../styles/colors";
+
+.root {
+  cursor: default;
+
+  &:hover {
+    background-color: fade(@color-main, @color-fade-1);
+  }
+}
+
+.folder {
+  .title {
+    white-space: nowrap;
+
+    &:before {
+      color: @color-main;
+      cursor: pointer;
+      display: inline-block;
+      content: "\002B";
+      width: 1rem;
+      margin-right: 0.25rem;
+      text-align: center;
+    }
+  }
+
+  &.open {
+    .title {
+      &:before {
+        content: "\2013";
+      }
+    }
+  }
+}
+
+.hidden {
+  display: none;
+}
+
+.coverage {
+  &.bad {
+    color: @color-bad;
+  }
+
+  &.normal {
+    color: @color-normal;
+  }
+
+  &.good {
+    color: @color-good;
+  }
+}
+
+.numbers {
+  text-align: right;
+}

@@ -1,6 +1,7 @@
 import { source as parseLCOV } from 'lcov-parse';
 
 const readLcov = (file) => new Promise((resolve, reject) => {
+  const date = new Date(file.lastModified || file.lastModifiedDate || new Date().getTime()).toString();
   const reader = new FileReader();
   reader.onload = () => {
     const lcovContent = reader.result;
@@ -8,7 +9,7 @@ const readLcov = (file) => new Promise((resolve, reject) => {
       if (error) {
         reject([error, 'Failed to parse file']);
       } else {
-        resolve(data);
+        resolve([date, data]);
       }
     });
   };

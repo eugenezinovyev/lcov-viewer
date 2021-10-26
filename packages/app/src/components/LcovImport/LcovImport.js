@@ -1,4 +1,4 @@
-import clsx from 'clsx';
+import { buildCoverageTree, clsx } from '@lcov-viewer/core';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
 import { useHistory } from 'react-router-dom';
@@ -17,8 +17,8 @@ const LcovImport = () => {
     }
 
     readLcov(files[0]).then(
-      (coverage) => {
-        set(buildCoverage(coverage));
+      ([date, coverage]) => {
+        set(buildCoverageTree(buildCoverage(coverage)), date);
         history.push('/report');
       },
       ([error, msg]) => {

@@ -15,6 +15,7 @@ const config = configurator({
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '/mocks/',
+    '\.less$',
   ],
 });
 
