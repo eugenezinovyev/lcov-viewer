@@ -1,7 +1,7 @@
 import { CoverageIndicator, Summary, TreeView } from '@lcov-viewer/components';
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import useCoverageData from '../CoverageDataProvider/useCoverageData';
+import Redirect from '../Redirect/Redirect';
 import classes from './Report.module.less';
 
 const Report = () => {
