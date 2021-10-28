@@ -5,8 +5,8 @@ import 'prismjs/themes/prism.css';
 import '@lcov-viewer/core/styles/baseline.less';
 import App from './components/App';
 
-const date = REPORT_DATE_PLACEHOLDER;
-const coverage = COVERAGE_DATA_PLACEHOLDER;
+const date = REPORT_DATE;
+const coverage = COVERAGE_DATA;
 
 ReactDOM.render(
   <App coverage={coverage} date={date} />,
