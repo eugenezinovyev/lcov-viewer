@@ -18,7 +18,6 @@
   "dependencies": {
     "@lcov-viewer/components": "^1.0.1",
     "@lcov-viewer/core": "^1.0.1",
-    "history": "^5.0.1",
     "lcov-parse": "^1.0.0",
     "preact": "^10.5.15",
     "preact-router": "^3.2.1",

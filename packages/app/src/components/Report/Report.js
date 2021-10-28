@@ -14,6 +14,8 @@ const Report = () => {
   return (
     <div className={classes.root}>
       <Summary metrics={coverage.metrics}>
+        <a href="/">🠔 Back</a>
+        <span className={classes.separator}>|</span>
         <span>All Files</span>
       </Summary>
       <CoverageIndicator metrics={coverage.metrics.lines} />
