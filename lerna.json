@@ -4,6 +4,6 @@
     "packages/*",
     "packages/demo/*"
   ],
-  "version": "1.0.1",
+  "version": "independent",
   "useWorkspaces": true
 }
