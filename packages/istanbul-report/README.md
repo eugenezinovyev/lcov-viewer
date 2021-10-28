@@ -1,6 +1,6 @@
 ![build](https://github.com/eugenezinovyev/lcov-viewer/actions/workflows/main.yml/badge.svg)
 [![Known Vulnerabilities](https://snyk.io/test/github/eugenezinovyev/lcov-viewer/badge.svg?targetFile=packages%2Fistanbul-report%2Fpackage.json)](https://snyk.io/test/github/eugenezinovyev/lcov-viewer?targetFile=packages%2Fistanbul-report%2Fpackage.json)
-[![npm version](https://badge.fury.io/js/@lcov-viewer%2Fistanbul-report.svg)](https://badge.fury.io/js/@lcov-viewer/istanbul-report)
+[![npm version](https://badge.fury.io/js/@lcov-viewer%2Fistanbul-report.svg)](https://www.npmjs.com/package/@lcov-viewer/istanbul-report)
 
 # LCOV viewer Istanbul report
 
