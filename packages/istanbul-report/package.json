@@ -7,7 +7,7 @@
     "lcov",
     "report"
   ],
-  "version": "1.0.1",
+  "version": "1.1.0",
   "private": false,
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "main": "lib/index.js",
@@ -21,8 +21,8 @@
     "istanbul-lib-report": "^3.0.0"
   },
   "devDependencies": {
-    "@lcov-viewer/components": "^1.0.1",
-    "@lcov-viewer/core": "^1.0.1",
+    "@lcov-viewer/components": "^1.1.0",
+    "@lcov-viewer/core": "^1.1.0",
     "copy-webpack-plugin": "^9.0.1",
     "history": "^5.0.1",
     "html-inline-css-webpack-plugin": "^1.11.1",
