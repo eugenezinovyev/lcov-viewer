@@ -5,6 +5,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const JsonMinimizerPlugin = require('json-minimizer-webpack-plugin');
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin');
 const { BundleAnalyzerPlugin } = require('webpack-bundle-analyzer');
+const FaviconsWebpackPlugin = require('favicons-webpack-plugin');
 
 module.exports = (env, argv) => {
   const mode = argv.mode || 'development';
@@ -35,6 +36,24 @@ module.exports = (env, argv) => {
       new HtmlWebpackPlugin({ template: 'index.html' }),
       isProduction && new MiniCssExtractPlugin(),
       analyze && new BundleAnalyzerPlugin(),
+      new FaviconsWebpackPlugin({
+        logo: path.resolve(__dirname, 'favicon.png'),
+        mode: 'webapp',
+        devMode: 'webapp',
+        prefix: '',
+        favicons: {
+          icons: {
+            android: false,
+            appleIcon: false,
+            appleStartup: false,
+            coast: false,
+            favicons: true,
+            firefox: false,
+            windows: false,
+            yandex: false,
+          },
+        },
+      }),
     ].filter(Boolean),
     optimization: {
       minimize: isProduction,
