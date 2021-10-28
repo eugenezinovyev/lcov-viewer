@@ -173,7 +173,7 @@ const configurator = (customization = {}) => {
     // A map from regular expressions to paths to transformers
     transform: {
       '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': path.resolve(__dirname, 'jest', 'babelTransform.js'),
-      '^.+\\.(css|less)$': path.resolve(__dirname, 'jest', 'cssTransform.js'),
+      '^.+\\.(css|less)$': 'jest-css-modules-transform',
       '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json|info)$)': path.resolve(__dirname, 'jest', 'fileTransform.js'),
       '^.+\\.info$': 'jest-raw-loader',
     },

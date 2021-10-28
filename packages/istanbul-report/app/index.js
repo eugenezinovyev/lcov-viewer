@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import './styles.less';
-import Report from './components/Report';
+import 'prismjs';
+import 'prismjs/themes/prism.css';
+import '@lcov-viewer/core/styles/baseline.less';
+import App from './components/App';
 
-const coverage = COVERAGE_DATA_PLACEHOLDER;
+const date = REPORT_DATE;
+const coverage = COVERAGE_DATA;
 
 ReactDOM.render(
-  <Report coverage={coverage} />,
+  <App coverage={coverage} date={date} />,
   document.getElementById('root')
 );

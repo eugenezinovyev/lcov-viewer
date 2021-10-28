@@ -27,6 +27,7 @@ class IstanbulReport extends ReportBase {
   onStart(root, context) {
     this.writer = this.getWriter(context);
     this.collectedData = {};
+    this.reportDataWriter = this.writer.writeFile('report-data.js');
 
     const self = this;
     fs.readdirSync(self.srcDir).forEach(file => {
@@ -38,25 +39,40 @@ class IstanbulReport extends ReportBase {
     });
   }
 
-  onDetail(node) {
+  onDetail(node, context) {
     const qualifiedName = node.getQualifiedName();
     const metrics = node.getCoverageSummary();
+    this.collectedData[qualifiedName] = {
+      metrics: buildMetrics(metrics),
+      path: qualifiedName,
+      filename: node.getRelativeName(),
+      details: {
+        lines: undefined,
+      },
+    };
 
-    this.collectedData[qualifiedName] = { metrics: buildMetrics(metrics), path: qualifiedName, filename: node.getRelativeName() };
+    const fileCoverage = node.getFileCoverage();
+    const sourceText = context.getSource(fileCoverage.path);
+    const lineStats = fileCoverage.getLineCoverage();
+
+    if (lineStats) {
+      this.collectedData[qualifiedName].details.lines = sourceText.split(/\r?\n|\r/)
+        .map((line, index) => {
+          const lineNumber = index + 1;
+
+          return ({
+            line: lineNumber,
+            hits: lineStats[lineNumber.toString()] || 0,
+            text: line,
+          });
+        });
+    }
   }
 
   onEnd() {
-    const reportFile = path.resolve(this.writer.baseDir, 'app.js');
-
-    const self = this;
-    fs.readFile(reportFile, 'utf8', function (err, data) {
-      if (!err) {
-        const result = data.replace(/COVERAGE_DATA_PLACEHOLDER/g, JSON.stringify(self.collectedData));
-        fs.writeFile(reportFile, result, 'utf8', err => err && console.error(err));
-      } else {
-        console.error(err);
-      }
-    });
+    this.reportDataWriter.write(`window.REPORT_DATE = '${new Date().toString()}';`);
+    this.reportDataWriter.write(`window.COVERAGE_DATA = ${JSON.stringify(this.collectedData)};`);
+    this.reportDataWriter.close();
   }
 }
 

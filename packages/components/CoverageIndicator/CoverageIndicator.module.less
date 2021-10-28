@@ -1,0 +1,21 @@
+@import "~@lcov-viewer/core/styles/colors";
+@import "~@lcov-viewer/core/styles/layout";
+
+.root {
+  flex-shrink: 0;
+  height: 1rem;
+  margin-bottom: 0.5rem;
+  border-radius: @border-radius;
+
+  &.bad {
+    background-color: @color-bad;
+  }
+
+  &.normal {
+    background-color: @color-normal;
+  }
+
+  &.good {
+    background-color: @color-good;
+  }
+}

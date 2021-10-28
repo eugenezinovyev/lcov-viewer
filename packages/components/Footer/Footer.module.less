@@ -1,0 +1,16 @@
+.root {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 1rem 0;
+  
+  span, a {
+    white-space: nowrap;
+  }
+  
+  span {
+    &:before {
+      content: '\00a0|\00a0';
+    }
+  }
+}

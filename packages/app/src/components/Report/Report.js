@@ -1,15 +1,25 @@
-import TreeView from '@lcov-viewer/tree-view';
+import { CoverageIndicator, Summary, TreeView } from '@lcov-viewer/components';
 import React from 'react';
-import { Redirect } from 'react-router-dom';
 import useCoverageData from '../CoverageDataProvider/useCoverageData';
+import Redirect from '../Redirect/Redirect';
 import classes from './Report.module.less';
 
 const Report = () => {
-  const coverage = useCoverageData();
+  const { data: coverage } = useCoverageData();
+  
+  if (!coverage) {
+    return <Redirect to="/"/>;
+  }
 
   return (
     <div className={classes.root}>
-      {coverage ? <TreeView coverage={coverage}/> : <Redirect to="/"/>}
+      <Summary metrics={coverage.metrics}>
+        <a href="/">🠔 Back</a>
+        <span className={classes.separator}>|</span>
+        <span>All Files</span>
+      </Summary>
+      <CoverageIndicator metrics={coverage.metrics.lines} />
+      <TreeView coverage={coverage}/>
     </div>
   );
 };

@@ -3,11 +3,11 @@
 
 # LCOV viewer
 
-Parses LCOV file and generates coverage tree view.
+LCOV code coverage report viewer. Parses lcov report files and generates HTML report grouped by directory.
 
 ## Installation
 
-This repository uses Yarn workspaces. Please use Yarn to 
+This repository uses Yarn workspaces. Please use Yarn as a package manager.
 
 ```
 > git clone https://github.com/eugenezinovyev/lcov-viewer.git
@@ -23,11 +23,14 @@ The repository provides Istanbul report generator.
 ```
 yarn add -D @lcov-viewer/istanbul-report
 ```
-Please see docs [here](/packages/istanbul-report).
+Check documentation [here](/packages/istanbul-report).
 
-## Example
+## Live Demo
+
+Check live demo [here](https://lcov-viewer.netlify.app/).
+
+## Demo
 
 Open LCOV viewer in your browser and drop `lcov.info` file into the dropzone.
 
-![image](https://user-images.githubusercontent.com/1678896/138569019-dba539b2-bc32-4bc0-8573-051e2fef64f4.png)
-![image](https://user-images.githubusercontent.com/1678896/138568915-ed3d5afb-c1a8-4a9a-a986-2d23a0ae447f.png)
+![viewer](https://user-images.githubusercontent.com/1678896/139163904-5f845791-2af5-4cdd-b044-98406b2963b7.gif)

@@ -1,25 +1,23 @@
+import Router from 'preact-router';
 import React from 'react';
-import { BrowserRouter, Redirect, Route, Switch } from 'react-router-dom';
 import CoverageDataProvider from './CoverageDataProvider/CoverageDataProvider';
+import Footer from './Footer/Footer';
 import LcovImport from './LcovImport/LcovImport';
+import Redirect from './Redirect/Redirect';
 import Report from './Report/Report';
+import classes from './App.module.less';
 
 const App = () => (
-  <CoverageDataProvider>
-    <BrowserRouter>
-      <Switch>
-        <Route exact path="/">
-          <LcovImport/>
-        </Route>
-        <Route exact path="/report">
-          <Report/>
-        </Route>
-        <Route>
-          <Redirect to="/" />
-        </Route>
-      </Switch>
-    </BrowserRouter>
-  </CoverageDataProvider>
+  <div className={classes.root}>
+    <CoverageDataProvider>
+      <Router>
+        <LcovImport path="/"/>
+        <Report path="/report"/>
+        <Redirect default to="/"/>
+      </Router>
+      <Footer/>
+    </CoverageDataProvider>
+  </div>
 );
 
 export default App;

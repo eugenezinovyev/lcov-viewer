@@ -10,11 +10,12 @@
     "start": "webpack serve"
   },
   "dependencies": {
-    "@lcov-viewer/tree-view": "^1.0.1",
-    "clsx": "^1.1.1",
+    "@lcov-viewer/components": "^1.0.1",
+    "@lcov-viewer/core": "^1.0.1",
     "preact": "^10.5.15"
   },
   "devDependencies": {
+    "html-webpack-plugin": "^5.4.0",
     "json-loader": "^0.5.7"
   }
 }

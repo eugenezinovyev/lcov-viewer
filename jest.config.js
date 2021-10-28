@@ -3,6 +3,7 @@ const configurator = require('./jest.base-config');
 const config = configurator({
   coverageReporters: [
     'lcov',
+    'json',
     '@lcov-viewer/istanbul-report',
   ],
   moduleNameMapper: {
@@ -14,6 +15,7 @@ const config = configurator({
   coveragePathIgnorePatterns: [
     '/node_modules/',
     '/mocks/',
+    '\.less$',
   ],
 });
 

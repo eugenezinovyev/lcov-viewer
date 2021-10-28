@@ -1,7 +1,7 @@
-import clsx from 'clsx';
+import { buildCoverageTree, clsx } from '@lcov-viewer/core';
+import { route } from 'preact-router';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import { useHistory } from 'react-router-dom';
 import buildCoverage from '../../utils/buildCoverage';
 import readLcov from '../../utils/readLcov';
 import useCoverageDataControl from '../CoverageDataProvider/useCoverageDataControl';
@@ -10,23 +10,22 @@ import classes from './LcovImport.module.less';
 const LcovImport = () => {
   const [error, setError] = useState(undefined);
   const [set] = useCoverageDataControl();
-  const history = useHistory();
   const onDrop = useCallback((files) => {
     if (files.length <= 0) {
       return;
     }
 
     readLcov(files[0]).then(
-      (coverage) => {
-        set(buildCoverage(coverage));
-        history.push('/report');
+      ([date, coverage]) => {
+        set(buildCoverageTree(buildCoverage(coverage)), date);
+        route('/report', true);
       },
       ([error, msg]) => {
         console.error(error);
         setError(msg);
       },
     );
-  }, [set, history]);
+  }, [set]);
   const { isDragActive, getRootProps, getInputProps } = useDropzone({ onDrop });
 
   return (

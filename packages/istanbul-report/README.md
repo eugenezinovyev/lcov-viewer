@@ -4,9 +4,9 @@
 
 # LCOV viewer Istanbul report
 
-Generates coverage report 
+Istanbul grouped HTML report. Generates code coverage report grouped by directory.
 
-## Install
+## Installation and Usage
 
 Install development dependency using NPM
 ```
@@ -16,7 +16,8 @@ OR using YARN
 ```
 yarn add -D @lcov-viewer/istanbul-report
 ```
-Update your Jest config
+
+Include reporter in Jest config
 ```js
 module.exports = {
     // ...
@@ -27,5 +28,11 @@ module.exports = {
 };
 ```
 
+or specify as [nyc](https://github.com/istanbuljs/nyc) reporter
+```
+nyc --reporter=@lcov-viewer/istanbul-report npm run test
+nyc --reporter=@lcov-viewer/istanbul-report yarn test
+```
+
 ## Demo
-![image](https://user-images.githubusercontent.com/1678896/138568915-ed3d5afb-c1a8-4a9a-a986-2d23a0ae447f.png)
+![report](https://user-images.githubusercontent.com/1678896/139162954-4e062a3a-9776-4b15-9700-2a63dbdd58c3.gif)

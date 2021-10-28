@@ -18,7 +18,7 @@ const useCoverageData = () => {
     };
   }, [context]);
 
-  return context.data;
+  return context;
 };
 
 export default useCoverageData;
