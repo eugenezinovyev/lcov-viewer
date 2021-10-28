@@ -2,8 +2,10 @@
   "name": "@lcov-viewer/istanbul-report",
   "keywords": [
     "coverage",
+    "code coverage",
     "istanbul",
-    "lcov"
+    "lcov",
+    "report"
   ],
   "version": "1.0.1",
   "private": false,
@@ -39,7 +41,7 @@
   "directories": {
     "lib": "lib"
   },
-  "description": "An Istanbul report to generate LCOV viewer report.",
+  "description": "Istanbul grouped HTML report. Generates code coverage report grouped by directory.",
   "repository": {
     "type": "git",
     "url": "https://github.com/eugenezinovyev/lcov-viewer.git",
