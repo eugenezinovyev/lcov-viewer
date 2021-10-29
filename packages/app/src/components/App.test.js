@@ -28,16 +28,23 @@ const queryTableContent = container => [...container.querySelectorAll('tbody > t
   .map(row => [...row.querySelectorAll('td')].map(cell => cell.textContent));
 
 describe('<App />', () => {
+  let container = null;
+  let queryByText = null;
   const importFile = async (content) => {
     const file = new File([content], 'lcov.info', { type: 'plain/text' });
     const data = mockData([file]);
 
-    const { container } = render((<App/>));
     dispatchEvt(container.querySelector('input[type="file"]'), 'drop', data);
     await pauseFor(100);
     
     return queryTableContent(container);
   };
+  
+  beforeEach(() => {
+    const result = render(<App/>);
+    container = result.container;
+    queryByText = result.queryByText;
+  });
   
   describe('Absolute path', () => {
     it('should process LCOV with windows paths', async () => {
@@ -146,5 +153,15 @@ describe('<App />', () => {
       const tableContent = await importFile(mockLcov.winRelativeSingleRoot);
       expect(tableContent).toEqual(singleRootTableData);
     });
+  });
+  
+  it('should reset footer when navigated back to import page', async () => {
+    expect(queryByText(/^Report generated at/)).not.toBeInTheDocument();
+
+    await importFile(mockLcov.winAbsolute);
+    expect(queryByText(/^Report generated at/)).toBeInTheDocument();
+
+    fireEvent.click(queryByText(/Back/), { role: 'a' });
+    expect(queryByText(/^Report generated at/)).not.toBeInTheDocument();
   });
 });

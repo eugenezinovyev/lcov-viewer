@@ -17,8 +17,8 @@ const useCoverageDataControl = () => {
         break;
     }
   }, [context]);
-  const set = useCallback((data, date) => dispatch('set', { data, date }), [context]);
-  const unset = useCallback(() => dispatch('unset'), [context]);
+  const set = useCallback((data, date) => dispatch('set', { data, date }), [dispatch]);
+  const unset = useCallback(() => dispatch('unset'), [dispatch]);
 
   return [set, unset];
 };
