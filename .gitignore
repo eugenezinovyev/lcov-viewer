@@ -4,3 +4,4 @@ dist/
 /packages/demo/*/coverage/
 /packages/*/coverage/
 /coverage/
+yarn-error.log

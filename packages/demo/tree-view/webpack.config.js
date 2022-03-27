@@ -20,5 +20,10 @@ module.exports = (env, argv) => {
     type: 'javascript/auto',
   });
 
+  config.resolve.fallback = {
+    fs: false,
+    path: false,
+  };
+
   return config;
 };

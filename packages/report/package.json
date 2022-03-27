@@ -1,26 +1,27 @@
 {
-  "name": "@lcov-viewer/app",
+  "name": "@lcov-viewer/report",
   "version": "1.2.0",
+  "private": false,
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
-  "main": "src/index.js",
+  "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build": "webpack --mode=production --node-env=production",
     "analyze": "webpack --mode=production --analyze",
-    "start": "webpack serve",
-    "test": "../../node_modules/.bin/jest --colors --passWithNoTests"
+    "start": "webpack serve"
   },
   "devDependencies": {
-    "@lcov-viewer/istanbul-report": "^1.2.0",
-    "@testing-library/jest-dom": "^5.14.1",
-    "@testing-library/preact": "^2.0.1",
-    "copy-webpack-plugin": "^9.0.1"
-  },
-  "dependencies": {
     "@lcov-viewer/components": "^1.2.0",
     "@lcov-viewer/core": "^1.2.0",
+    "history": "^5.0.1",
+    "html-inline-css-webpack-plugin": "^1.11.1",
+    "html-webpack-plugin": "^5.4.0",
+    "license-webpack-plugin": "^3.0.0",
     "preact": "^10.5.15",
     "preact-router": "^3.2.1",
-    "react-dropzone": "^11.4.2"
-  }
+    "prismjs": "^1.25.0",
+    "react-prism": "^4.3.2",
+    "terser-webpack-plugin": "^5.2.4"
+  },
+  "description": "LCOV viewer report assets."
 }

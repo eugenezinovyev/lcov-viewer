@@ -1,5 +1,7 @@
 import React, { useMemo } from 'react';
-import { buildTableRowsData, renderRow, renderTable } from '@lcov-viewer/core';
+import buildTableRowsData from '../render/buildTableRowsData';
+import renderRow from '../render/renderRow';
+import renderTable from '../render/renderTable';
 import useCollapse from './useCollapse';
 import classes from './TreeView.module.less';
 

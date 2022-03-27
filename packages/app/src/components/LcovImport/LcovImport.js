@@ -1,8 +1,7 @@
-import { buildCoverageTree, clsx } from '@lcov-viewer/core';
+import { buildCoverage, buildCoverageTree, clsx } from '@lcov-viewer/core';
 import { route } from 'preact-router';
 import React, { useCallback, useState } from 'react';
 import { useDropzone } from 'react-dropzone';
-import buildCoverage from '../../utils/buildCoverage';
 import readLcov from '../../utils/readLcov';
 import useCoverageDataControl from '../CoverageDataProvider/useCoverageDataControl';
 import classes from './LcovImport.module.less';

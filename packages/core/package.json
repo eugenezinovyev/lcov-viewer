@@ -1,10 +1,13 @@
 {
   "name": "@lcov-viewer/core",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "test": "../../node_modules/.bin/jest --colors --passWithNoTests"
+  },
+  "dependencies": {
+    "lcov-parse": "^1.0.0"
   }
 }

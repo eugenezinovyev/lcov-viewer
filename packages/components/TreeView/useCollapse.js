@@ -1,4 +1,5 @@
-import { BRANCH_NODE, collapseRow, expandRow, hideRow, showRow } from '@lcov-viewer/core';
+import { BRANCH_NODE } from '@lcov-viewer/core';
+import { collapseRow, expandRow, hideRow, showRow } from '../render/collapse';
 import { useEffect, useRef } from 'react';
 
 const findRow = (element) => {
