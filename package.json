@@ -1,7 +1,7 @@
 {
   "name": "lcov-viewer",
   "description": "LCOV viewer",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "license": "MIT",
   "private": true,
