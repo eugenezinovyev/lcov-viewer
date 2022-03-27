@@ -1,6 +1,6 @@
 import { BRANCH_NODE } from '@lcov-viewer/core';
-import { collapseRow, expandRow, hideRow, showRow } from '../render/collapse';
 import { useEffect, useRef } from 'react';
+import { collapseRow, expandRow, hideRow, showRow } from '../render/collapse';
 
 const findRow = (element) => {
   let current = element;
@@ -11,6 +11,8 @@ const findRow = (element) => {
   
   return current;
 };
+
+const makeParentPath = path => path && `${path}/`;
 
 const useCollapse = () => {
   const ref = useRef();
@@ -41,11 +43,12 @@ const useCollapse = () => {
       } else {
         collapseRow(rowState.row);
       }
-      
-      const childrenPaths = Object.keys(state.current).filter(path => path.startsWith(rowState.path) && path !== rowState.path);
+
+      const childrenPaths = Object.keys(state.current).filter(path => path.startsWith(makeParentPath(rowState.path)) && path !== rowState.path);
       const collapsedChildrenPaths = childrenPaths.filter(path => state.current[path].collapsed);
       const affectedChildrenPaths = childrenPaths
-        .filter(path => !collapsedChildrenPaths.find(collapsedChildPath => path.startsWith(collapsedChildPath) && path !== collapsedChildPath));
+        .filter(path => !collapsedChildrenPaths
+          .find(collapsedChildPath => path.startsWith(makeParentPath(collapsedChildPath)) && path !== collapsedChildPath));
 
       affectedChildrenPaths.forEach(path => {
         if (rowState.collapsed) {

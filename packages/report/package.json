@@ -1,6 +1,6 @@
 {
   "name": "@lcov-viewer/report",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "private": false,
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "main": "index.js",
@@ -11,8 +11,8 @@
     "start": "webpack serve"
   },
   "devDependencies": {
-    "@lcov-viewer/components": "^1.2.0",
-    "@lcov-viewer/core": "^1.2.0",
+    "@lcov-viewer/components": "^1.2.1",
+    "@lcov-viewer/core": "^1.2.1",
     "history": "^5.0.1",
     "html-inline-css-webpack-plugin": "^1.11.1",
     "html-webpack-plugin": "^5.4.0",

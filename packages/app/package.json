@@ -1,6 +1,6 @@
 {
   "name": "@lcov-viewer/app",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "main": "src/index.js",
   "license": "MIT",
@@ -11,14 +11,14 @@
     "test": "../../node_modules/.bin/jest --colors --passWithNoTests"
   },
   "devDependencies": {
-    "@lcov-viewer/istanbul-report": "^1.2.0",
+    "@lcov-viewer/istanbul-report": "^1.2.1",
     "@testing-library/jest-dom": "^5.14.1",
     "@testing-library/preact": "^2.0.1",
     "copy-webpack-plugin": "^9.0.1"
   },
   "dependencies": {
-    "@lcov-viewer/components": "^1.2.0",
-    "@lcov-viewer/core": "^1.2.0",
+    "@lcov-viewer/components": "^1.2.1",
+    "@lcov-viewer/core": "^1.2.1",
     "preact": "^10.5.15",
     "preact-router": "^3.2.1",
     "react-dropzone": "^11.4.2"
