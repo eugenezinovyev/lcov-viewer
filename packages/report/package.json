@@ -1,0 +1,27 @@
+{
+  "name": "@lcov-viewer/report",
+  "version": "1.1.0",
+  "private": false,
+  "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
+  "main": "index.js",
+  "license": "MIT",
+  "scripts": {
+    "build": "webpack --mode=production --node-env=production",
+    "analyze": "webpack --mode=production --analyze",
+    "start": "webpack serve"
+  },
+  "devDependencies": {
+    "@lcov-viewer/components": "^1.1.0",
+    "@lcov-viewer/core": "^1.1.0",
+    "history": "^5.0.1",
+    "html-inline-css-webpack-plugin": "^1.11.1",
+    "html-webpack-plugin": "^5.4.0",
+    "license-webpack-plugin": "^3.0.0",
+    "preact": "^10.5.15",
+    "preact-router": "^3.2.1",
+    "prismjs": "^1.25.0",
+    "react-prism": "^4.3.2",
+    "terser-webpack-plugin": "^5.2.4"
+  },
+  "description": "LCOV viewer report assets."
+}

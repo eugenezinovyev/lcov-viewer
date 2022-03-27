@@ -1,8 +1,5 @@
-import calculatePercentage from './calculatePercentage';
-import clsx from './clsx';
-import { resolveCoverageClass } from './coverageLevel';
+import { BRANCH_NODE, calculatePercentage, clsx, resolveCoverageClass } from '@lcov-viewer/core';
 import classes from './renderRow.module.less';
-import { BRANCH_NODE } from './treeNodeTypes';
 
 const rowClasses = clsx(classes.root, classes.folder, classes.open);
 

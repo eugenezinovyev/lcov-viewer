@@ -34,5 +34,9 @@ nyc --reporter=@lcov-viewer/istanbul-report npm run test
 nyc --reporter=@lcov-viewer/istanbul-report yarn test
 ```
 
+# Other packages
+A CLI conversion package: [@lcov-viewer/cli](https://www.npmjs.com/package/@lcov-viewer/cli)
+
+
 ## Demo
 ![report](https://user-images.githubusercontent.com/1678896/139162954-4e062a3a-9776-4b15-9700-2a63dbdd58c3.gif)

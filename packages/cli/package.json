@@ -1,9 +1,9 @@
 {
-  "name": "@lcov-viewer/istanbul-report",
+  "name": "@lcov-viewer/cli",
   "keywords": [
     "coverage",
     "code coverage",
-    "istanbul",
+    "cli",
     "lcov",
     "report"
   ],
@@ -16,12 +16,19 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "@lcov-viewer/rollup-copy": "^1.1.0",
-    "istanbul-lib-report": "^3.0.0"
+    "commander": "^9.1.0"
+  },
+  "bin": {
+    "lcov-viewer": "lib/index.js"
   },
   "devDependencies": {
+    "@lcov-viewer/core": "^1.1.0",
     "@lcov-viewer/report": "^1.1.0",
+    "@lcov-viewer/rollup-copy": "^1.1.0",
+    "@rollup/plugin-commonjs": "^21.0.2",
+    "@rollup/plugin-node-resolve": "^13.1.3",
     "rollup": "^2.70.1",
+    "rollup-plugin-preserve-shebang": "^1.0.1",
     "rollup-plugin-terser": "^7.0.2"
   },
   "files": [
@@ -30,10 +37,10 @@
   "directories": {
     "lib": "lib"
   },
-  "description": "Istanbul grouped HTML report. Generates code coverage report grouped by directory.",
+  "description": "LCOV viewer CLI to convert coverage to grouped HTML report. Generates code coverage report grouped by directory.",
   "repository": {
     "type": "git",
     "url": "https://github.com/eugenezinovyev/lcov-viewer.git",
-    "directory": "packages/istanbul-report"
+    "directory": "packages/cli"
   }
 }

@@ -19,7 +19,6 @@
   "dependencies": {
     "@lcov-viewer/components": "^1.1.0",
     "@lcov-viewer/core": "^1.1.0",
-    "lcov-parse": "^1.0.0",
     "preact": "^10.5.15",
     "preact-router": "^3.2.1",
     "react-dropzone": "^11.4.2"

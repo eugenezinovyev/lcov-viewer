@@ -6,5 +6,8 @@
   "license": "MIT",
   "scripts": {
     "test": "../../node_modules/.bin/jest --colors --passWithNoTests"
+  },
+  "dependencies": {
+    "lcov-parse": "^1.0.0"
   }
 }

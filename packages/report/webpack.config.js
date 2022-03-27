@@ -3,39 +3,31 @@ const TerserPlugin = require('terser-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const { LicenseWebpackPlugin } = require('license-webpack-plugin');
 const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default;
-const HtmlInlineScriptPlugin = require('html-inline-script-webpack-plugin');
-const CopyPlugin = require('copy-webpack-plugin');
 const baseConfig = require('../../webpack.base-config');
 
 module.exports = (env, argv) => {
   const config = {
     ...baseConfig(env, argv),
     entry: {
-      app: './app/index.js',
+      app: './src/index.js',
     },
     output: {
       filename: '[name].js',
-      path: path.resolve(__dirname, 'lib/assets'),
+      path: path.resolve(__dirname, 'dist'),
     },
   };
 
   const htmlWebpackPlugin = config.plugins.find(plugin => plugin instanceof HtmlWebpackPlugin) || new HtmlWebpackPlugin();
-  htmlWebpackPlugin.userOptions.template = 'app/index.html';
+  htmlWebpackPlugin.userOptions.template = 'src/index.html';
   htmlWebpackPlugin.userOptions.inject = 'body';
 
   config.plugins.push(new HTMLInlineCSSWebpackPlugin());
-
-  config.plugins.push(new CopyPlugin({
-    patterns: [
-      { from: 'src', to: path.resolve(__dirname, 'lib') },
-    ],
-  }));
 
   config.plugins.push(new LicenseWebpackPlugin({
     addBanner: true,
     perChunkOutput: false,
     licenseFileOverrides: {
-      '@lcov-viewer/istanbul-report': path.resolve('LICENSE'),
+      '@lcov-viewer/report': path.resolve('LICENSE'),
     },
     excludedPackageTest: (packageName) => [
       'preact-compat',
@@ -61,6 +53,11 @@ module.exports = (env, argv) => {
       },
     }),
   ];
+
+  config.resolve.fallback = {
+    fs: false,
+    path: false,
+  };
 
   return config;
 };
