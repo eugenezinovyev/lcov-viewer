@@ -1,0 +1,15 @@
+{
+  "shape": "squircle",
+  "shapeProps": {
+    "n": 5,
+    "resolution": 20,
+    "width": 240,
+    "height": 240,
+    "fill": "#d461b0"
+  },
+  "fontFamily": "Oxygen",
+  "fontSize": 160,
+  "fontVariant": "regular",
+  "text": "LV",
+  "fontColor": "#ffffff"
+}

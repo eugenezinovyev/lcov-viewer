@@ -13,8 +13,7 @@
   "devDependencies": {
     "@lcov-viewer/istanbul-report": "^1.2.1",
     "@testing-library/jest-dom": "^5.16.4",
-    "@testing-library/preact": "^3.2.2",
-    "copy-webpack-plugin": "^11.0.0"
+    "@testing-library/preact": "^3.2.2"
   },
   "dependencies": {
     "@lcov-viewer/components": "^1.2.1",

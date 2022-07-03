@@ -5,6 +5,11 @@ const { LicenseWebpackPlugin } = require('license-webpack-plugin');
 const HTMLInlineCSSWebpackPlugin = require('html-inline-css-webpack-plugin').default;
 const baseConfig = require('../../webpack.base-config');
 
+const licenseExcludedPackages = [
+  'preact-compat',
+  'preact-hooks',
+];
+
 module.exports = (env, argv) => {
   const config = {
     ...baseConfig(env, argv),
@@ -29,10 +34,7 @@ module.exports = (env, argv) => {
     licenseFileOverrides: {
       '@lcov-viewer/report': path.resolve('LICENSE'),
     },
-    excludedPackageTest: (packageName) => [
-      'preact-compat',
-      'preact-hooks',
-    ].includes(packageName),
+    excludedPackageTest: (packageName) => licenseExcludedPackages.includes(packageName),
   }));
 
   config.optimization.minimizer = [
