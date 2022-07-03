@@ -1,6 +1,6 @@
 {
   "name": "@lcov-viewer/rollup-copy",
-  "version": "1.2.1",
+  "version": "1.3.0",
   "private": false,
   "author": "Eugene Zinovyev <eugene.zinovyev@gmail.com>",
   "main": "index.js",
