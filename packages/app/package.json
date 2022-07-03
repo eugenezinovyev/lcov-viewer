@@ -21,6 +21,6 @@
     "@lcov-viewer/core": "^1.2.1",
     "preact": "^10.5.15",
     "preact-router": "^3.2.1",
-    "react-dropzone": "^11.4.2"
+    "react-dropzone": "^14.2.2"
   }
 }
