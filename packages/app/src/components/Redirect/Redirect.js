@@ -1,12 +1,12 @@
-import { Component } from 'preact';
+import { useEffect } from 'preact/hooks';
 import { route } from 'preact-router';
 
-export default class Redirect extends Component {
-  componentWillMount() {
-    route(this.props.to, true);
-  }
+const Redirect = ({ to }) => {
+  useEffect(() => {
+    route(to, true);
+  }, [to]);
 
-  render() {
-    return null;
-  }
-}
+  return null;
+};
+
+export default Redirect;

@@ -45,7 +45,7 @@
     "postcss-loader": "^7.0.0",
     "postcss-normalize": "^10.0.1",
     "postcss-preset-env": "^7.7.2",
-    "react-test-renderer": "^17.0.2",
+    "react-test-renderer": "^18.2.0",
     "style-loader": "^3.3.1",
     "webpack": "^5.73.0",
     "webpack-bundle-analyzer": "^4.5.0",

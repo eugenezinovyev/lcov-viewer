@@ -16,7 +16,7 @@
     "build": "rollup -c"
   },
   "dependencies": {
-    "commander": "^9.1.0"
+    "commander": "^9.3.0"
   },
   "bin": {
     "lcov-viewer": "lib/index.js"
