@@ -1,5 +1,5 @@
 import { BRANCH_NODE } from '@lcov-viewer/core';
-import { useEffect, useRef } from 'react';
+import { useCallback, useEffect, useRef } from 'react';
 import { collapseRow, expandRow, hideRow, showRow } from '../render/collapse';
 
 const findRow = (element) => {
@@ -25,7 +25,8 @@ const useCollapse = () => {
 
     Array.prototype.forEach.call(ref.current.querySelectorAll('tbody tr'), row => {
       const path = row.getAttribute('data-node');
-      state.current[path] = { path, row, collapsed: false, visible: true };
+      const type = row.getAttribute('data-node-type');
+      state.current[path] = { path, type, row, collapsed: false, visible: true };
     });
 
     const handleClick = (event) => {
@@ -53,8 +54,10 @@ const useCollapse = () => {
       affectedChildrenPaths.forEach(path => {
         if (rowState.collapsed) {
           showRow(state.current[path].row);
+          state.current[path].visible = true;
         } else {
           hideRow(state.current[path].row);
+          state.current[path].visible = false;
         }
       });
 
@@ -69,7 +72,38 @@ const useCollapse = () => {
     };
   }, []);
 
-  return ref;
+  const onCollapseAll = useCallback(() => {
+    Object.values(state.current).forEach(rowState => {
+      if (rowState.type === BRANCH_NODE) {
+        if (!rowState.collapsed) {
+          collapseRow(rowState.row);
+          rowState.collapsed = true;
+        }
+      }
+      
+      if (rowState.path !== '') {
+        hideRow(rowState.row);
+        rowState.visible = false;
+      }
+    });
+      
+  }, []);
+
+  const onExpandAll = useCallback(() => {
+    Object.values(state.current).forEach(rowState => {
+      if (rowState.collapsed) {
+        expandRow(rowState.row);
+        rowState.collapsed = false;
+      }
+
+      if (!rowState.visible) {
+        showRow(rowState.row);
+        rowState.visible = true;
+      }
+    });
+  }, []);
+
+  return [ref, onCollapseAll, onExpandAll];
 };
 
 export default useCollapse;
