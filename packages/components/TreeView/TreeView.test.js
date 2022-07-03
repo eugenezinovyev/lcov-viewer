@@ -1,6 +1,6 @@
 import { buildCoverageTree } from '@lcov-viewer/core';
 import '@testing-library/jest-dom';
-import { fireEvent, render } from '@testing-library/react';
+import { fireEvent, render } from '@testing-library/preact';
 import React from 'react';
 import TreeView from './TreeView';
 

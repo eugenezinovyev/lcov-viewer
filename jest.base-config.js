@@ -175,14 +175,14 @@ const configurator = (customization = {}) => {
       '^.+\\.(js|jsx|mjs|cjs|ts|tsx)$': path.resolve(__dirname, 'jest', 'babelTransform.js'),
       '^.+\\.(css|less)$': 'jest-css-modules-transform',
       '^(?!.*\\.(js|jsx|mjs|cjs|ts|tsx|css|json|info)$)': path.resolve(__dirname, 'jest', 'fileTransform.js'),
-      '^.+\\.info$': 'jest-raw-loader',
+      '^.+\\.info$': path.resolve(__dirname, 'jest', 'rawLoader.js'),
     },
 
     // An array of regexp pattern strings that are matched against all source file paths, matched files will skip transformation
-    // transformIgnorePatterns: [
-    //   "\\\\node_modules\\\\",
-    //   "\\.pnp\\.[^\\\\]+$"
-    // ],
+    transformIgnorePatterns: [
+      "\\\\node_modules\\\\(?!preact|@testing-library\\preact)",
+      "\\.pnp\\.[^\\\\]+$",
+    ],
 
     // An array of regexp pattern strings that are matched against all modules before the module loader will automatically return a mock for them
     // unmockedModulePathPatterns: undefined,

@@ -12,10 +12,10 @@
   "dependencies": {
     "@lcov-viewer/components": "^1.2.1",
     "@lcov-viewer/core": "^1.2.1",
-    "preact": "^10.5.15"
+    "preact": "^10.8.2"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^5.4.0",
+    "html-webpack-plugin": "^5.5.0",
     "json-loader": "^0.5.7"
   }
 }

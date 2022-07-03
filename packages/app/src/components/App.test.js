@@ -36,16 +36,16 @@ describe('<App />', () => {
 
     dispatchEvt(container.querySelector('input[type="file"]'), 'drop', data);
     await pauseFor(100);
-    
+
     return queryTableContent(container);
   };
-  
+
   beforeEach(() => {
     const result = render(<App/>);
     container = result.container;
     queryByText = result.queryByText;
   });
-  
+
   describe('Absolute path', () => {
     it('should process LCOV with windows paths', async () => {
       const tableContent = await importFile(mockLcov.winAbsolute);
@@ -95,7 +95,7 @@ describe('<App />', () => {
       //@formatter:on
     });
   });
-  
+
   describe('Multiple root folders', () => {
     //@formatter:off
     const multiRootTableData = [
@@ -154,7 +154,7 @@ describe('<App />', () => {
       expect(tableContent).toEqual(singleRootTableData);
     });
   });
-  
+
   it('should reset footer when navigated back to import page', async () => {
     expect(queryByText(/^Report generated at/)).not.toBeInTheDocument();
 
