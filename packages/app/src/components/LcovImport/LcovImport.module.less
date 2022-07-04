@@ -4,12 +4,54 @@
 .root {
   flex-grow: 1;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   width: 100%;
   height: 100%;
-  align-items: center;
-  justify-content: center;
   font-size: 1.25rem;
+}
+
+.packages {
+  display: grid;
+  grid-template-columns: auto 1fr;
+  grid-row-gap: 0.5rem;
+  grid-column-gap: 0.5rem;
+  font-size: 1.125rem;
+
+  a {
+    white-space: nowrap;
+  }
+
+  span {
+    white-space: break-spaces;
+  }
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  
+  &.infoColumn {
+    padding: 0 1rem;
+    flex: 0 1 0;
+    
+    h3, h4 {
+      margin: 0 0 0.625rem;
+    }
+    
+    p {
+      margin: 0 0 0.5rem;
+    }
+
+    img {
+      margin: 2.5rem 0 2.5rem;
+    }
+  }
+  
+  &.dropColumn {
+    flex: 1;
+    align-items: center;
+  }
 }
 
 .dropper {
@@ -24,6 +66,19 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  text-align: center;
+
+  @media only screen and (min-width: 1300px) {
+    font-size: 1.375rem;
+    flex: 0 1 60%;
+    width: 60%;
+  }
+
+  @media only screen and (min-width: 1600px) {
+    font-size: 1.5rem;
+    flex: 0 1 75%;
+    width: 75%;
+  }
 
   &.active {
     background-color: fade(@color-main, @color-fade-0);
