@@ -1,0 +1,32 @@
+.root {
+  display: flex;
+  align-items: center;
+  padding: 1rem 0;
+}
+
+.icon {
+  margin-right: 1rem;
+}
+
+.title {
+  margin: 0;
+  flex: 1;
+}
+
+.links {
+  display: flex;
+  flex-direction: row;
+}
+
+.links a {
+  font-size: 2.5rem;
+  margin-left: 1.5rem;
+}
+
+.github, .github:visited, .github:active {
+  color: #24292f;
+}
+
+.npm, .npm:visited, .npm:active {
+  color: #cb0000;
+}
