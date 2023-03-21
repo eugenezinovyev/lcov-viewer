@@ -3,7 +3,7 @@ import classes from './Footer.module.less';
 
 const Footer = ({ linkHref, children }) => (
   <div className={classes.root}>
-    <a href={linkHref} target="_blank">LCOV Viewer</a>
+    <a href={linkHref} target="_blank" rel="noopener noreferrer">LCOV Viewer</a>
     {children && <span>{children}</span>}
   </div>
 );
