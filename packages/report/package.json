@@ -19,7 +19,7 @@
     "license-webpack-plugin": "^4.0.2",
     "preact": "^10.8.2",
     "preact-router": "^4.0.1",
-    "prismjs": "^1.28.0",
+    "prismjs": "^1.29.0",
     "react-prism": "^4.3.2",
     "terser-webpack-plugin": "^5.3.3"
   },
