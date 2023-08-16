@@ -1,9 +1,9 @@
-import { getAssets } from '@lcov-viewer/report';
+import report from '@lcov-viewer/report';
 import copy from '@lcov-viewer/rollup-copy';
 import commonjs from '@rollup/plugin-commonjs';
 import { nodeResolve } from '@rollup/plugin-node-resolve';
 import shebang from 'rollup-plugin-preserve-shebang';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 
 export default [
   {
@@ -16,7 +16,7 @@ export default [
       terser(),
       shebang(),
       copy({
-        files: getAssets(),
+        files: report.getAssets(),
         dest: './lib/assets',
       }),
       nodeResolve({ preferBuiltins: true }),

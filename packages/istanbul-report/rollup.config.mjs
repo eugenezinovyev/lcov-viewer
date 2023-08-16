@@ -1,6 +1,6 @@
-import { getAssets } from '@lcov-viewer/report';
+import report from '@lcov-viewer/report';
 import copy from '@lcov-viewer/rollup-copy';
-import { terser } from 'rollup-plugin-terser';
+import terser from '@rollup/plugin-terser';
 
 export default [
   {
@@ -12,7 +12,7 @@ export default [
     plugins: [
       terser(),
       copy({
-        files: getAssets(),
+        files: report.getAssets(),
         dest: './lib/assets',
       }),
     ],
