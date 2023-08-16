@@ -13,7 +13,8 @@
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "test:all": "jest --colors --passWithNoTests",
-    "version:update": "lerna version --no-push"
+    "version:update": "lerna version --no-push",
+    "syncpack": "syncpack list-mismatches"
   },
   "devDependencies": {
     "@babel/cli": "^7.18.6",
@@ -46,6 +47,7 @@
     "postcss-preset-env": "^9.1.1",
     "react-test-renderer": "^18.2.0",
     "style-loader": "^3.3.1",
+    "syncpack": "^11.2.1",
     "webpack": "^5.76.2",
     "webpack-bundle-analyzer": "^4.8.0",
     "webpack-cli": "^5.0.1",
