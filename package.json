@@ -14,7 +14,8 @@
     "test": "lerna run test --stream",
     "test:all": "jest --colors --passWithNoTests",
     "version:update": "lerna version --no-push",
-    "syncpack": "syncpack list-mismatches"
+    "syncpack": "syncpack list-mismatches",
+    "start" : "lerna run start --scope @lcov-viewer/app --stream"
   },
   "devDependencies": {
     "@babel/core": "^7.18.6",
