@@ -4,6 +4,5 @@
     "packages/*",
     "packages/demo/*"
   ],
-  "version": "1.3.0",
-  "useWorkspaces": true
+  "version": "1.3.0"
 }
