@@ -1,5 +1,14 @@
+@import "@lcov-viewer/core/styles/layout";
 @import "@lcov-viewer/core/styles/colors";
 @import "@lcov-viewer/core/styles/typography";
+@import 'prismjs/themes/prism.css';
+
+:global(.token.uncovered-branch) {
+  background-color: fade(@color-bad, @color-fade-0);
+  outline: @color-bad solid 1px;
+  outline-offset: 1px;
+  border-radius: @border-radius;
+}
 
 .root {
   display: flex;
@@ -34,4 +43,9 @@
 .code {
   flex-grow: 1;
   padding-left: 0.5rem;
+
+  .pre {
+    margin: 0;
+    padding: 0 0.5rem;
+  }
 }

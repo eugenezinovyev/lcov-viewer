@@ -1,11 +1,16 @@
 import { CoverageIndicator, Summary } from '@lcov-viewer/components';
+import Prism from 'prismjs';
 import React from 'react';
-import PrismCode from 'react-prism/lib/components/PrismCode';
+import tokenize from '../highlight/tokenize';
+import TokenStream from './TokenStream';
 import classes from './Details.module.less';
+
+Prism.manual = true;
+Prism.disableWorkerMessageHandler = true;
 
 const Details = ({ coverage, file }) => {
   const { metrics, details } = coverage[file] || {};
-  
+
   if (!details || !details.lines || !details.lines.length) {
     return null;
   }
@@ -17,7 +22,7 @@ const Details = ({ coverage, file }) => {
         <span>/</span>
         <span>{file}</span>
       </Summary>
-      <CoverageIndicator metrics={metrics.lines} />
+      <CoverageIndicator metrics={metrics.lines}/>
       <div className={classes.codeContainer}>
         <div className={classes.lineNumbers}>
           {details.lines.map(({ line, hits }) => (
@@ -34,9 +39,10 @@ const Details = ({ coverage, file }) => {
           ))}
         </div>
         <div className={classes.code}>
-          <PrismCode component="pre" className="language-javascript code">
-            {details.lines.map(line => line.text).join('\n')}
-          </PrismCode>
+          {/* TODO: resolve language from file extension */}
+          <pre className={`language-javascript code ${classes.pre}`}>
+            <TokenStream tokens={tokenize(details)}/>
+          </pre>
         </div>
       </div>
     </div>

@@ -1,7 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import 'prismjs';
-import 'prismjs/themes/prism.css';
 import '@lcov-viewer/core/styles/baseline.less';
 import App from './components/App';
 

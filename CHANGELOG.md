@@ -18,6 +18,11 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 * Moved Github Actions from 14.x, 16.x, 17.x to 16.x, 18.x, 20.x
 * Updated legacy Github Actions to new versions
 * Updated the root README.md with package descriptions and local development instructions
+* Replaced react-prism with a custom TokenStream component for better control
+* Explicitly switched Prism to manual mode
+
+### Removed
+* Removed react-prism dependency
 
 ## [1.3.0] - 2022-07-03
 ### Added
