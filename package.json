@@ -49,7 +49,7 @@
     "style-loader": "^3.3.1",
     "syncpack": "^11.2.1",
     "webpack": "^5.76.2",
-    "webpack-bundle-analyzer": "^4.8.0",
+    "webpack-bundle-analyzer": "^4.9.0",
     "webpack-cli": "^5.0.1",
     "webpack-dev-server": "^4.9.3"
   },
