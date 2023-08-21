@@ -8781,10 +8781,10 @@ postcss-value-parser@^4.1.0, postcss-value-parser@^4.2.0:
     picocolors "^1.0.0"
     source-map-js "^1.0.2"
 
-preact-router@^4.0.1:
-  version "4.0.1"
-  resolved "https://registry.npmjs.org/preact-router/-/preact-router-4.0.1.tgz"
-  integrity sha512-xPyHVLouc5oKIlKu9iEElplNygJYkOn/vfXfZhcoOFqzfAZHZMmT3FsQb0yyPkdt1rwTLFAxek6/5CFkofocSQ==
+preact-router@^4.1.2:
+  version "4.1.2"
+  resolved "https://registry.yarnpkg.com/preact-router/-/preact-router-4.1.2.tgz#f44b03737b670eeaec958563582eb8c4efaa87a5"
+  integrity sha512-uICUaUFYh+XQ+6vZtQn1q+X6rSqwq+zorWOCLWPF5FAsQh3EJ+RsDQ9Ee+fjk545YWQHfUxhrBAaemfxEnMOUg==
 
 preact@^10.8.2:
   version "10.8.2"
