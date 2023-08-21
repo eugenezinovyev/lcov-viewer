@@ -13,7 +13,7 @@
     "build": "lerna run build --stream",
     "test": "lerna run test --stream",
     "test:all": "jest --colors --passWithNoTests",
-    "version:update": "lerna version --no-push",
+    "version:update": "lerna version --no-push --amend",
     "syncpack": "syncpack list-mismatches",
     "start" : "lerna run start --scope @lcov-viewer/app --stream"
   },
