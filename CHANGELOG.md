@@ -20,6 +20,7 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 * Updated the root README.md with package descriptions and local development instructions
 * Replaced react-prism with a custom TokenStream component for better control
 * Explicitly switched Prism to manual mode
+* Switched lerna to independent versioning to avoid publishing unchanged CLI package
 
 ### Removed
 * Removed react-prism dependency
