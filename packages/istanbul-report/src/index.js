@@ -48,12 +48,17 @@ class IstanbulReport extends ReportBase {
       filename: node.getRelativeName(),
       details: {
         lines: undefined,
+        branchCoverage: undefined,
+        branchMap: undefined,
       },
     };
 
     const fileCoverage = node.getFileCoverage();
     const sourceText = context.getSource(fileCoverage.path);
     const lineStats = fileCoverage.getLineCoverage();
+
+    this.collectedData[qualifiedName].details.branchCoverage = fileCoverage.b;
+    this.collectedData[qualifiedName].details.branchMap = fileCoverage.branchMap;
 
     if (lineStats) {
       this.collectedData[qualifiedName].details.lines = sourceText.split(/\r?\n|\r/)
