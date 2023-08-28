@@ -15,7 +15,7 @@
     "preact": "^10.8.2"
   },
   "devDependencies": {
-    "html-webpack-plugin": "^5.5.0",
+    "html-webpack-plugin": "^5.5.3",
     "json-loader": "^0.5.7"
   }
 }
