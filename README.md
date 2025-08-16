@@ -54,6 +54,6 @@ yarn
 yarn start
 ```
 
-The open http://localhost:8080/ in your browser and drop `lcov.info` file into the dropzone.
+Then open http://localhost:8080/ in your browser and drop `lcov.info` file into the dropzone.
 
 ![viewer](https://user-images.githubusercontent.com/1678896/139163904-5f845791-2af5-4cdd-b044-98406b2963b7.gif)
