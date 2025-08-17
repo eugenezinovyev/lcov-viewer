@@ -19,7 +19,7 @@ function createTokenize(uncoveredBranchTag, language) {
       [UncoveredBranchEnd]: new RegExp(endTag),
       // we can either make them greedy and add base grammar after
       // OR we can remove them from token stream and run a separate highlight on the rest of the 'uncovered-branch' content
-      // OR we can leave them as is to have no highlighting inside the 'uncovered-branch' content (the option I went with because it lloks
+      // OR we can leave them as is to have no highlighting inside the 'uncovered-branch' content (the option I went with because it looks
       // slightly better to have no highlighting for the 'uncovered-branch' content)
     },
   };
